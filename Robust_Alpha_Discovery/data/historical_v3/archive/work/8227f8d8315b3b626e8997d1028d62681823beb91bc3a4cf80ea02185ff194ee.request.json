@@ -1,0 +1,10 @@
+{
+  "source": "baostock",
+  "endpoint": "calendar",
+  "params": {
+    "start_date": "2015-01-01",
+    "end_date": "2025-12-31"
+  },
+  "archive_schema": 1,
+  "direct": true
+}

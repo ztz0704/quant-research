@@ -1,0 +1,14 @@
+{
+  "source": "broker_export",
+  "asof": null,
+  "equity": null,
+  "cash_available": null,
+  "positions": [],
+  "open_orders": null,
+  "policy": {
+    "fee_reserve_bps": null,
+    "minimum_commission": null,
+    "cash_buffer": null,
+    "max_position_weight": null
+  }
+}

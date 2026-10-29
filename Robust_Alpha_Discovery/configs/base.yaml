@@ -1,0 +1,64 @@
+project:
+  name: robust-alpha-discovery-demo
+  random_seed: 20260826
+
+data:
+  source: synthetic
+  path: data/synthetic/demo_ohlcv.parquet
+  start_date: "2018-01-02"
+  n_days: 900
+  n_assets: 60
+  min_history: 125
+
+timing:
+  target_column: target_o2o
+  require_entry_tradable: true
+  require_exit_tradable: true
+
+preprocessing:
+  method: rank_gaussian
+
+signals:
+  - mom_5
+  - mom_20
+  - mom_60
+  - mom_120
+  - mom_20_skip5
+  - rev_1
+  - rev_3
+  - rev_5
+  - neg_vol_10
+  - neg_vol_20
+  - neg_vol_60
+  - neg_range_10
+  - neg_range_20
+  - neg_amihud_20
+  - neg_amihud_60
+  - volshock_5_20
+  - ma_gap_20
+  - ma_gap_60
+  - mom20_over_vol20
+  - mom60_over_vol60
+
+evaluation:
+  annualization: 252
+  min_assets_per_date: 20
+  hac_maxlags: 5
+  quantile: 0.10
+
+walk_forward:
+  train_years: 2
+  top_k: 5
+
+costs:
+  bps: [0, 10, 20, 30]
+
+multiple_testing:
+  alpha: 0.05
+  block_length: 20
+  bootstrap_replications: 300
+
+output:
+  panel_path: data/processed/demo_research_panel.parquet
+  directory: reports/generated/demo
+

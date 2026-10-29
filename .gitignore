@@ -1,0 +1,41 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.pytest_tmp/
+pytest-cache-files-*/
+.ruff_cache/
+.mypy_cache/
+.uv-cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Temporary files
+tmp/
+*.partial
+
+# Local credentials and settings
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+.ssh/
+
+# Personal documents
+/output/resume/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

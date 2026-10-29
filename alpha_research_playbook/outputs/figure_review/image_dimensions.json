@@ -1,0 +1,122 @@
+[
+  {
+    "name": "model_ic_comparison.png",
+    "width": 1250,
+    "height": 550
+  },
+  {
+    "name": "rolling_ic.png",
+    "width": 1390,
+    "height": 550
+  },
+  {
+    "name": "rolling_rank_ic.png",
+    "width": 1390,
+    "height": 550
+  },
+  {
+    "name": "ic_distribution.png",
+    "width": 1250,
+    "height": 550
+  },
+  {
+    "name": "decile_returns.png",
+    "width": 1250,
+    "height": 550
+  },
+  {
+    "name": "cumulative_long_only.png",
+    "width": 1390,
+    "height": 550
+  },
+  {
+    "name": "cumulative_long_short.png",
+    "width": 1390,
+    "height": 550
+  },
+  {
+    "name": "gross_net_performance.png",
+    "width": 1250,
+    "height": 550
+  },
+  {
+    "name": "turnover_comparison.png",
+    "width": 1250,
+    "height": 550
+  },
+  {
+    "name": "feature_importance.png",
+    "width": 1217,
+    "height": 690
+  },
+  {
+    "name": "importance_stability.png",
+    "width": 1250,
+    "height": 550
+  },
+  {
+    "name": "feature_ic_over_time.png",
+    "width": 1390,
+    "height": 550
+  },
+  {
+    "name": "feature_drift_psi_raw.png",
+    "width": 1065,
+    "height": 690
+  },
+  {
+    "name": "feature_drift_psi_model_input.png",
+    "width": 1087,
+    "height": 690
+  },
+  {
+    "name": "feature_distribution_drift.png",
+    "width": 1526,
+    "height": 832
+  },
+  {
+    "name": "model_decay_curve.png",
+    "width": 1250,
+    "height": 550
+  },
+  {
+    "name": "return_vs_model_age.png",
+    "width": 1250,
+    "height": 550
+  },
+  {
+    "name": "performance_vs_training_window.png",
+    "width": 1110,
+    "height": 550
+  },
+  {
+    "name": "performance_vs_retraining_frequency.png",
+    "width": 1110,
+    "height": 550
+  },
+  {
+    "name": "regime_performance.png",
+    "width": 1211,
+    "height": 690
+  },
+  {
+    "name": "hyperparameter_sensitivity.png",
+    "width": 955,
+    "height": 550
+  },
+  {
+    "name": "prediction_stability.png",
+    "width": 1110,
+    "height": 550
+  },
+  {
+    "name": "prediction_distribution.png",
+    "width": 1390,
+    "height": 550
+  },
+  {
+    "name": "transaction_cost_sensitivity.png",
+    "width": 1250,
+    "height": 550
+  }
+]

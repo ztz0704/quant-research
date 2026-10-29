@@ -1,0 +1,36 @@
+seed: 20261012
+phase: historical_integration
+protocol:
+  status: frozen
+  empirical_status: draft
+  sha256: 71aec05da228e6865c42437434159e46ae725a4f30bcef5563ae2df90619f998
+  holdout_confirmed_untouched: false
+data:
+  source: cached_sina
+  min_history: 60
+  min_assets: 20
+  min_amount_20: 0
+validation:
+  mode: rolling
+  train_days: 126
+  validation_days: 42
+  test_days: 42
+  step_days: 42
+  embargo_days: 2
+  min_train_rows: 1000
+models:
+  enabled: [ridge, boosting]
+  grids:
+    ridge: [{alpha: 1.0}, {alpha: 100.0}]
+    boosting:
+      - {max_iter: 80, max_leaf_nodes: 7, learning_rate: 0.05, l2_regularization: 1.0}
+      - {max_iter: 80, max_leaf_nodes: 15, learning_rate: 0.05, l2_regularization: 1.0}
+statistics:
+  hac_lags: 5
+  block_days: 10
+  bootstrap_replications: 500
+portfolio:
+  quantile: 0.2
+  cost_bps_per_full_l1: [0, 5, 10, 20]
+output:
+  directory: outputs/research_v2/historical_integration

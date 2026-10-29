@@ -1,0 +1,225 @@
+{
+  "created_utc": "2026-10-03T07:51:17.645336+00:00",
+  "config": {
+    "data": {
+      "input_path": "data/processed/ashare_panel.parquet",
+      "alpha_path": null,
+      "max_abs_return": 0.95
+    },
+    "real_data": {
+      "provider": "akshare_sina_raw",
+      "share_fallback": "sina_dated_float_a_history",
+      "universe_path": "configs/ashare_universe.csv",
+      "suspension_path": "configs/ashare_suspensions.csv",
+      "suspension_policy": "mark_last_and_defer_all_trades",
+      "raw_dir": "data/raw/ashare",
+      "output_dir": "outputs/ashare",
+      "fetch_start": "2022-01-01",
+      "end_date": "2023-12-29",
+      "calendar_symbol": "sh000001",
+      "request_timeout": 20,
+      "retries": 3,
+      "request_pause": 0.3,
+      "momentum_lookback": 126,
+      "momentum_skip": 21,
+      "volatility_window": 63,
+      "liquidity_window": 21,
+      "reversal_window": 5,
+      "execution_delay_sessions": 1,
+      "universe_description": "Retrospectively specified fixed 60-stock basket; not historical index membership",
+      "classification_description": "Researcher supplied coarse business groups; not vendor-certified PIT industries"
+    },
+    "risk_model": {
+      "industries": [
+        "banks",
+        "other_financials",
+        "consumer",
+        "industrials",
+        "resources_utilities",
+        "technology_healthcare"
+      ],
+      "styles": [
+        "size",
+        "momentum",
+        "volatility",
+        "liquidity"
+      ],
+      "regression": "wls",
+      "weight_power": 0.5,
+      "lookback": 126,
+      "min_observations": 63,
+      "covariance_method": "ewma",
+      "specific_method": "ewma",
+      "ewma_lambda": 0.94,
+      "variance_floor": 1e-06,
+      "eigenvalue_floor": 1e-10,
+      "specific_shrinkage": 0.15
+    },
+    "alpha": {
+      "winsorize": true,
+      "mad_multiplier": 5.0,
+      "neutralize": false,
+      "neutralization": "joint",
+      "scale": 0.0006
+    },
+    "portfolio": {
+      "long_only": true,
+      "risk_aversion": 5.0,
+      "cost_penalty": 1.0,
+      "max_weight": 0.03,
+      "gross_limit": 1.0,
+      "turnover_limit": 0.3,
+      "industry_tolerance": 0.1,
+      "style_tolerance": 0.3,
+      "tracking_error_annual": 0.12,
+      "solver": "CLARABEL",
+      "solver_options": {
+        "tol_gap_abs": 1e-07,
+        "tol_gap_rel": 1e-07,
+        "tol_feas": 1e-08,
+        "max_iter": 300
+      },
+      "constraint_tolerance": 2e-06,
+      "baseline_quantile": 0.2
+    },
+    "transaction_cost": {
+      "sell_bps_schedule": [
+        [
+          "2022-01-01",
+          10.0
+        ],
+        [
+          "2023-08-28",
+          5.0
+        ]
+      ],
+      "linear_bps": 5.0,
+      "impact_coefficient": 0.002,
+      "optimization_impact": true,
+      "trade_scale": 0.01
+    },
+    "backtest": {
+      "evaluation_start": "2023-01-03",
+      "rebalance_frequency": "weekly",
+      "annualization": 252,
+      "realized_risk_window": 21
+    },
+    "experiments": {
+      "risk_aversion": [
+        1.0,
+        5.0,
+        20.0
+      ],
+      "cost_penalty": [
+        0.0,
+        1.0,
+        5.0
+      ],
+      "position_limits": [
+        0.02,
+        0.05,
+        0.1
+      ],
+      "covariance_methods": [
+        "sample",
+        "ewma"
+      ],
+      "alpha_modes": [
+        "raw",
+        "neutralized"
+      ],
+      "rebalance_frequencies": [
+        "daily",
+        "weekly",
+        "monthly"
+      ],
+      "stress_seed": 807,
+      "alpha_noise_std": 0.5,
+      "covariance_perturbation": 0.25,
+      "cost_multiplier": 3.0,
+      "liquidity_multiplier": 4.0,
+      "volatility_multiplier": 2.0,
+      "local_alpha_noise_fraction": 0.01
+    },
+    "reporting": {
+      "rolling_sharpe_window": 63,
+      "rolling_volatility_window": 21,
+      "hac_lags": 5,
+      "bootstrap_block": 10,
+      "bootstrap_repetitions": 500,
+      "bootstrap_seed": 987
+    }
+  },
+  "input_sha256": "16450e75f336ab18cfdcf0eaa1efc10f18903e716222a973f0b6d4e81276e701",
+  "lock_sha256": "541f166c0a6bfceb23048997b23920b29d1b34a7c8c4103b104dab3fa6bb1d38",
+  "python": "3.12.13",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "cvxpy": "1.9.3",
+    "matplotlib": "3.11.2",
+    "pyarrow": "24.0.0"
+  },
+  "source_sha256": {
+    "scripts/estimate_risk_model.py": "9d6ccdc6868b49208f047c6cc11e6143257699ceaf76a11d556a3a93e1f6332f",
+    "scripts/fetch_ashare_data.py": "fce3caeb46723c73d65e8b3d3c33c67568a7732927075704af5d1224e0329af8",
+    "scripts/generate_report.py": "58583ec8a2a843ca1389395601631dc04152d131b855dffe1ea8333d9d9394fb",
+    "scripts/prepare_data.py": "20e66b58100f1e1ce50621362152ada870954c3ff106ab89628901a9199a82ee",
+    "scripts/probe_ashare_sources.py": "669c897ec25773919b5fa938291e3ee0d7778a8ede24ed7310d806cfa4e5f3d1",
+    "scripts/run_backtest.py": "fa4e32bd83b67e2ab85f05912a4b5d3f0d367fe8c6b2dddfe5d247a774799bf2",
+    "scripts/validate_ashare.py": "7c44b7286c3d875990b963718134eb27919e377bd0018b792ae9304de27c486c",
+    "scripts/verify_notebooks.py": "18b7e4a4abbbfe1fab16b79f51292e25da68b2e19e55104be18d4605afcfa8cf",
+    "src/risk_aware_portfolio/__init__.py": "ce0766b981592f64be614013b680aefda3c6237b34d5918e93098a3363b86b5b",
+    "src/risk_aware_portfolio/attribution/__init__.py": "2694543910bc11c34565e2ea4fdb7676fdeb28ac4739898df80eb5d846d1f11a",
+    "src/risk_aware_portfolio/attribution/factor_attribution.py": "38429003a787713c1a13cb436dc5414d9eefaf1aeb194e0ce053a613dc139b59",
+    "src/risk_aware_portfolio/attribution/performance.py": "0bb8bc35a2e7ab845c31ba17339bc063e6b6b600c2f7bfb84a87a754d79258ad",
+    "src/risk_aware_portfolio/backtest/__init__.py": "ec52efcbacf052092bf6659de267fbbb346265264d57e2bd356894e7cb3bc85b",
+    "src/risk_aware_portfolio/backtest/accounting.py": "7f38967ecc12a00a26dac215f0dc0f7d3aac406c7238de64f7d24680308f98d6",
+    "src/risk_aware_portfolio/backtest/comparisons.py": "2cfcfb9045859ab941538a14174150812f31a88d599b1d583e1429b0d622c710",
+    "src/risk_aware_portfolio/backtest/engine.py": "de46b39d52971e8479af2af43b4bc2ef92cf1ba74770420371e02eb796be21fd",
+    "src/risk_aware_portfolio/costs/__init__.py": "ce8f71ac049d266c931a56011105cf611d64664031567328fe8552e769eb575f",
+    "src/risk_aware_portfolio/costs/transaction_cost.py": "c21b25c59cecdc27c0395a4f2df5505a26b52863e611700f7bff640c3dfc8202",
+    "src/risk_aware_portfolio/data/__init__.py": "79027a6ca9f84e537ea1670656f7a7e189f6ea70fb26a9fe09c604337efffe73",
+    "src/risk_aware_portfolio/data/ashare.py": "dec40fcda2637c0d90f949a1cac33e4f52067692e4caa80c546b4f37ccd831f6",
+    "src/risk_aware_portfolio/data/loader.py": "f6d0eda4bd6ce93add08732884947bdcbb069920e09a89ccd88a0ffd2a9d80fb",
+    "src/risk_aware_portfolio/data/sina.py": "815ebee9bc973cc53f90c6a9c83db6a155da988201617454a61cbff37610467c",
+    "src/risk_aware_portfolio/data/suspensions.py": "364f311a6d82d362716926fa8b001c8d81bc4b7e178d12762b65c0a3eb14e259",
+    "src/risk_aware_portfolio/data/synthetic.py": "d9c8dafa4dcab0ba88d4e99ac1ad92236e7b1ade0bb70082ed25494a49b93639",
+    "src/risk_aware_portfolio/data/universe.py": "aac871cb1bb20804e97f103b2445f934bfc1912f03d99f99dbccc80471f9095d",
+    "src/risk_aware_portfolio/data/validation.py": "be1ebf90be78c131001376f36f15c5bb9c1fd1ba0b36db4560263f28f06bd057",
+    "src/risk_aware_portfolio/diagnostics/__init__.py": "a6816b52067f8ab9f5c9f0a894ae14116f3302eeed5d891ab7ec4b0e37d7553c",
+    "src/risk_aware_portfolio/diagnostics/portfolio_diagnostics.py": "2d5ce9b3f46344c6686f6197a0334c2f727a36f81f3f0c381e2480d58c295c56",
+    "src/risk_aware_portfolio/diagnostics/risk_diagnostics.py": "c1e38b74fbe730378b12afb4ba655f7efbc348903bec5310bea95affb919a9cb",
+    "src/risk_aware_portfolio/diagnostics/robustness.py": "22407c70ea74e03d01a445b8f95a70bc8c345520ed4e9f496245ddcad13329f1",
+    "src/risk_aware_portfolio/portfolio/__init__.py": "3fa96492374a1f44b4f57bef1f8a90618cf6478c0fb446b470ef888bc5789a51",
+    "src/risk_aware_portfolio/portfolio/baseline.py": "c6769925bf5fca9b3725f3626c98a4c58f178f1c067e7362e1db35475a2d198e",
+    "src/risk_aware_portfolio/portfolio/constraints.py": "93b808e78a1005c7e63ac2cb510b4a109319ba07e38cd9d7126c56ff097e7309",
+    "src/risk_aware_portfolio/portfolio/optimizer.py": "4562f702460c248cc11f43d79879bdfc7893d0a77c79dfe70997e5a68635d532",
+    "src/risk_aware_portfolio/portfolio/rebalance.py": "30eb90ee43d272a6ffade29083d2157c470362fc813804e2f52c4b1a47b3a975",
+    "src/risk_aware_portfolio/preprocessing/__init__.py": "4f9b7d0c15c326fe0bb29a6b9d931de6a4b62c96baea1cfa3ad18ad86bc342c0",
+    "src/risk_aware_portfolio/preprocessing/neutralization.py": "7486c8eac3f555b05f0af876f806059fabcbfcfa51864e067fc37a07de644be5",
+    "src/risk_aware_portfolio/preprocessing/standardization.py": "39a3ab4cf0feb701964be597144f1213911f0053318e9e4156fdeee349ba571b",
+    "src/risk_aware_portfolio/preprocessing/winsorization.py": "6614996d4aab9bd69e56a4b7c843607f6f2134be71c03a185231a8f312181b95",
+    "src/risk_aware_portfolio/reporting/__init__.py": "1a3ad882f799d3e4cd7d5aa8c2e7ff8a31a6dbc404e19a3dbd2dfd403c685a51",
+    "src/risk_aware_portfolio/reporting/figures.py": "1d4bac9a5552e344413f44667908c0e855d3d76ece368dddbdba7333c29db244",
+    "src/risk_aware_portfolio/reporting/notebooks.py": "d6ce60909ea1cde7ee2f3e32158ae048186e3456b2c0b6c448fc9ae11af32d73",
+    "src/risk_aware_portfolio/reporting/real_notebook.py": "b39ba69d2442a8aa86661fc740a7513a8e6fadff08c599e57868b9325e6d3468",
+    "src/risk_aware_portfolio/reporting/real_validation.py": "70306d1d30094d44a09961f462cad9f7c03c127e4882044463c01072f07354d3",
+    "src/risk_aware_portfolio/reporting/research_report.py": "0dd8c7a3dac13185b2c2d72ead4dca5668afc22491c964d9c1e91651a50aaae8",
+    "src/risk_aware_portfolio/reporting/tables.py": "b08108d10e89cefc95575619d5d13d8463a782b538e9e06b13c867c21c0a8e24",
+    "src/risk_aware_portfolio/risk/__init__.py": "7546c4f3d801d2d1fd0a6e1cc64c6d2773b57469909e26fb5e20197837221d52",
+    "src/risk_aware_portfolio/risk/covariance.py": "c8d92617401ab9599ca6e7beb73e948e85587c6044d2d076a5214932e5002718",
+    "src/risk_aware_portfolio/risk/exposures.py": "a53c70f5e7c943dcf3715ebbd1befd3acdbc9ddd07c3a76cc54e34f48826998d",
+    "src/risk_aware_portfolio/risk/factor_covariance.py": "eef4ed581cd385bf528ab65c82e66d9ba6609463a3106f65e29ba62f77f8c205",
+    "src/risk_aware_portfolio/risk/factor_returns.py": "43721d6176b0e9a006366ef29d98fb088f7ce86976c99b12c2adad8ddc5d628b",
+    "src/risk_aware_portfolio/risk/io.py": "cf8051b29c7cb5c921c1c39d8a57a75dbb8979282d356d137ef2b13aed080aa6",
+    "src/risk_aware_portfolio/risk/model.py": "2f40d106a6fe68261d092f368144eb842b44c64a94cff8d7bcbbff057ae0960d",
+    "src/risk_aware_portfolio/risk/specific_risk.py": "bfc2bc51927de69532ff5ec7cfa0a145399dfa6814d634462ec7f83a4b8c22a7",
+    "src/risk_aware_portfolio/utils/__init__.py": "75de925b966afe351ada43a21c0f601ce502ca09ab6454446df5ac33b35adb02",
+    "src/risk_aware_portfolio/utils/config.py": "27daaa36b60469668e7755972f250d4f27172103aae4344e1bc59f0abc495934",
+    "src/risk_aware_portfolio/utils/logging.py": "e6be888a00d0e2a56479067d09213f83960e6c6eed6cdc5aa05d7a48b917f010",
+    "src/risk_aware_portfolio/utils/manifest.py": "0642e6dc98df2847432787dc059d202876588ecd9c441c828f3b42254f1d0837",
+    "src/risk_aware_portfolio/utils/paths.py": "88f8059e4d7ea918ed8e4aafb5c52e12aa0622b0ae15012895a29c3baef70cc3"
+  }
+}

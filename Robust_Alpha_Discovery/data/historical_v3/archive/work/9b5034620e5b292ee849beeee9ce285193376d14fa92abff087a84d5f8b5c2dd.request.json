@@ -1,0 +1,7 @@
+{
+  "source": "akshare",
+  "endpoint": "calendar",
+  "params": {},
+  "archive_schema": 1,
+  "direct": true
+}

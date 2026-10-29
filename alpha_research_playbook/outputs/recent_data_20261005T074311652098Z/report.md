@@ -1,0 +1,77 @@
+# 近期真实行情接口核验
+
+核验截止：2026-09-30；价格：未复权。
+
+通过代表本次指定样本的接口检查通过；不代表股票池/PIT/交易部署已完成。
+
+```json
+{
+  "retrieved_at_utc": "2026-10-05T07:43:11.652098+00:00",
+  "expected_last_session": "2026-09-30",
+  "start_date": "2026-08-31",
+  "adjustment": "none",
+  "volume_unit": "shares",
+  "amount_unit": "CNY",
+  "akshare_version": "1.19.1",
+  "script_sha256": "e94d3b296bad0cb3e676b50a127bf13db06a5df554c09341cb9b20c8dbf4d9d4",
+  "results": [
+    {
+      "provider": "tencent",
+      "asset": "000001",
+      "passed": false,
+      "reasons": [
+        "vendor_worker_failed"
+      ],
+      "error_type": "ProxyError",
+      "files": {}
+    },
+    {
+      "provider": "eastmoney",
+      "asset": "000001",
+      "passed": false,
+      "reasons": [
+        "vendor_worker_failed"
+      ],
+      "error_type": "ProxyError",
+      "files": {}
+    },
+    {
+      "provider": "tencent",
+      "asset": "600000",
+      "passed": false,
+      "reasons": [
+        "vendor_worker_failed"
+      ],
+      "error_type": "ProxyError",
+      "files": {}
+    },
+    {
+      "provider": "eastmoney",
+      "asset": "600000",
+      "passed": false,
+      "reasons": [
+        "vendor_worker_failed"
+      ],
+      "error_type": "ProxyError",
+      "files": {}
+    }
+  ],
+  "comparisons": [
+    {
+      "asset": "000001",
+      "status": "unavailable_two_sources_required"
+    },
+    {
+      "asset": "600000",
+      "status": "unavailable_two_sources_required"
+    }
+  ],
+  "all_passed": false,
+  "limits": [
+    "Small source probe, not full-universe coverage or PIT certification",
+    "Expected last session is caller-confirmed, not inferred from weekdays",
+    "Vendor requests may internally fetch more history; it is not evaluated",
+    "No strategy selection, orders, brokerage access or synthetic fallback"
+  ]
+}
+```

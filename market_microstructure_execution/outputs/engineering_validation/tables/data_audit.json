@@ -1,0 +1,9 @@
+{
+  "source": "synthetic",
+  "seed": 20261003,
+  "input_rows": 12000,
+  "output_rows": 12000,
+  "removed": 0,
+  "removed_percentage": 0.0,
+  "reasons": {}
+}

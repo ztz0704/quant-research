@@ -1,0 +1,90 @@
+# Research Protocol
+
+Protocol version: `draft-v0.1`  
+Created: `2026-08-26`  
+Status: **DRAFT - not yet frozen for real-data inference**
+
+This file separates decisions that can be implemented safely before data inspection from choices
+that must be confirmed by the researcher before the real validation and final holdout are loaded.
+
+## 1. Research questions
+
+- H1: Searching more candidate signals inflates the best in-sample statistic under a joint null.
+- H2: Some pre-defined, interpretable signals retain the same sign in walk-forward OOS tests and
+  remain economically positive after pre-specified linear cost assumptions.
+- H3: Naive significance produces more discoveries than Bonferroni, Benjamini-Hochberg FDR, and a
+  joint block-bootstrap max-statistic calibration.
+- H4: Signal performance differs across a small number of pre-defined volatility, trend, and
+  cross-sectional-dispersion regimes.
+
+## 2. Timing convention (implemented)
+
+- Feature time: after `close(t)`, using observations dated no later than `t`.
+- Entry: `open(t+1)`.
+- Exit: `open(t+2)`.
+- Target: `log(open(t+2) / open(t+1))`.
+- Both entry and exit observations must satisfy the configured tradeability rule.
+- Signal-date portfolio eligibility uses only information available on `t`; future entry/exit
+  tradeability is never used to decide which names receive target weights.
+- `entry_date` and `exit_date` are retained explicitly. Labels whose exit crosses a configured
+  development/validation/holdout boundary, or a walk-forward calendar-year boundary, are purged.
+
+## 3. Candidate signals (proposed V1 family)
+
+The default configuration contains 20 fixed signals from momentum, reversal, volatility, range,
+liquidity, volume-shock, moving-average-gap, and risk-adjusted-momentum families. Their formulas
+and ex-ante directions are defined in code and configuration. A direction that disagrees with the
+data will be reported, not silently reversed.
+
+## 4. Preprocessing (proposed)
+
+- Filter to the point-in-time eligible universe first.
+- Transform every signal independently within each date.
+- Default: cross-sectional percentile rank followed by inverse-normal transformation.
+- No global, full-sample scaling.
+
+## 5. Evaluation (implemented defaults)
+
+- Daily Spearman IC and IC summary statistics.
+- Daily cross-sectional univariate factor return with naive and HAC inference.
+- Equal-weight top/bottom-decile long-short and top-decile long-only portfolios.
+- Turnover computed relative to post-return drifted prior weights.
+- Linear cost sensitivity at 0, 10, 20, and 30 bps per unit of turnover.
+- Multiple-testing comparison at `alpha = 0.05`.
+- Joint moving-block bootstrap with configurable seed, block length, and repetitions.
+- Walk-forward train-only top-k selection followed by a next-year equal-signal-weighted composite
+  portfolio, with turnover and the same cost scenarios as the single-signal diagnostics.
+
+## 6. Proposed real-data split - REQUIRES CONFIRMATION
+
+If 2013-2025 data are used and 2024-2025 have never been inspected for this project:
+
+- Development: 2013-2020
+- Validation: 2021-2023
+- Final holdout: 2024-2025, loaded once after V1 is frozen
+
+If 2024-2025 results have already been viewed, they must be relabeled as validation. A genuinely
+untouched future period is then required for a final holdout. Partial 2026 data should be labeled as
+a prospective extension rather than silently mixed with complete calendar-year results.
+
+## 7. Decisions that remain unfrozen
+
+- Exact A-share universe and point-in-time membership source.
+- Corporate-action adjustment method and its information availability.
+- ST, suspension, price-limit, IPO seasoning, and missing-open rules.
+- Real-data date split and final-holdout eligibility.
+- Whether short-side results are diagnostic only or treated as implementable.
+- Final block length and HAC lag sensitivity grid.
+
+No real-data confirmatory result should be described as pre-registered until these choices are
+filled in and the status above is changed to **FROZEN V1** before validation/holdout inspection.
+
+The machine-readable experiment config must also set `protocol.status: frozen` and
+`final_holdout_confirmed_untouched: true`. The pipeline requires both conditions plus an explicit
+`--include-final-holdout --research-phase holdout` invocation.
+
+## 8. Change log
+
+- `2026-08-26`: Created draft protocol and implemented data-independent defaults.
+- `2026-10-02`: Added strict research-phase windows, boundary purging, a double holdout gate,
+  signal-date-only portfolio eligibility, and a walk-forward selected OOS portfolio.

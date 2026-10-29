@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest_tmp/
+pytest-cache-files-*/
+tmp/pytest/
+tmp/pipeline_smoke/*
+!tmp/pipeline_smoke/.gitkeep
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+
+# Local scratch space and tool caches
+tmp/*
+!tmp/.gitkeep
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Licensed, private, or generated data
+data/raw/
+data/processed/
+data/synthetic/*.parquet
+data/synthetic/*.csv
+
+# Generated research outputs
+reports/generated/
+
+# Local overrides and secrets
+.env
+configs/local*.yaml

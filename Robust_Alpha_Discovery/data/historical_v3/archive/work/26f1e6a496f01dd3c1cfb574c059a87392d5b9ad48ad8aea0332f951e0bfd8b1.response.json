@@ -1,0 +1,1 @@
+{"source": "baostock", "endpoint": "adjustment", "status": "ok", "columns": ["code", "dividOperateDate", "foreAdjustFactor", "backAdjustFactor", "adjustFactor"], "data": [["sz.300431", "2015-03-24", "0.378178", "1.000000", "1.000000"], ["sz.300431", "2015-09-18", "0.832010", "2.200049", "2.200049"]], "sdk_version": "0.9.4", "downloaded_at": "2026-10-13T05:45:51.976206+00:00"}

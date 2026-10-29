@@ -1,0 +1,121 @@
+seed: 20261003
+data:
+  source: file
+  provider: public_szse_reconstructed
+  raw_path: data/raw/ashare_orderbook.parquet
+  input_path: data/processed/ashare_orderbook.parquet
+  features_path: data/processed/ashare_features.parquet
+  invalid_policy: raise
+  max_removed_fraction: 0.01
+synthetic:
+  events: 6000
+  assets: [SYN_A, SYN_B]
+  levels: 5
+  start: "2026-01-05T09:30:00Z"
+  event_interval_ms: 100
+  initial_mid: 100.0
+  tick_size: 0.01
+  spread_ticks: 2.0
+  beta: 0.003
+  sigma: 0.006
+  imbalance_persistence: 0.75
+  base_depth: 1000.0
+  trade_probability: 0.5
+  trade_size_mean: 50.0
+  regime_events: 750
+  high_vol_multiplier: 2.0
+features:
+  levels: 5
+  weighting: distance_decay
+  rolling_window: 50
+  min_periods: 10
+labels:
+  horizon_events: 10
+  horizon_ms: null
+  threshold_bps: 0.5
+  classification: three_class
+model:
+  type: logistic
+  compare: [linear, logistic, forest]
+  regularization: 1.0
+  forest_trees: 60
+  forest_max_depth: 5
+  forest_min_leaf: 40
+validation:
+  window: expanding
+  train_events: 2500
+  validation_events: 500
+  test_events: 750
+  step_events: 750
+  embargo_events: 10
+strategy:
+  entry_threshold: 0.20
+  max_inventory: 1000.0
+  trade_size: 100.0
+  regression_scale_bps: 2.0
+execution:
+  mode: taker
+  latency_events: 1
+  latency_ms: null
+  maker_ttl_events: 10
+  cancel_on_signal_change: true
+  max_participation: 0.10
+fees:
+  maker_bps: 3.0
+  taker_bps: 3.0
+  minimum_commission: 5.0
+  sell_tax_bps: 10.0
+  transfer_bps: 0.1
+market:
+  type: ashare_cash
+  lot_size: 100
+  rule_scope: Shenzhen main-board ordinary A-share cash account, no initial stock inventory
+  fee_date: "2022-06-01"
+slippage:
+  enabled: true
+  fixed_bps: 0.10
+  depth_coefficient_bps: 1.0
+market_impact:
+  enabled: true
+  coefficient_bps: 1.0
+  exponent: 0.5
+maker:
+  intercept: -1.0
+  intensity_coefficient: 1.0
+  imbalance_coefficient: 1.5
+  queue_coefficient: 1.0
+  queue_scale: 1000.0
+  flow_scale: 50.0
+backtest:
+  initial_cash: 1000000.0
+  liquidate_at_end: true
+  sharpe_interval_ms: 1000
+  annualization_periods: null
+diagnostics:
+  horizons: [1, 2, 5, 10, 20, 50, 100]
+  quantiles: 10
+  rolling_window: 250
+  bootstrap_block_events: 100
+  bootstrap_samples: 200
+  ablation_sets:
+    imbalance_only: [imbalance_1]
+    imbalance_spread_depth: [imbalance_1, spread_bps, log_depth]
+robustness:
+  latencies: [0, 1, 5, 10]
+  spread_multipliers: [1.0, 1.5, 2.0]
+  fee_multipliers: [1.0, 2.0]
+  depth_multipliers: [1.0, 0.5]
+  signal_noise_std: 0.10
+  volatility_multiplier: 2.0
+optimal_execution:
+  order_size: 10000.0
+  intervals: 20
+  duration_seconds: 20.0
+  eta: 0.00002
+  gamma: 0.000001
+  risk_aversions: [0.0, 0.00001, 0.0001, 0.001]
+  sigma_multipliers: [1.0, 2.0]
+  eta_multipliers: [1.0, 2.0]
+  size_multipliers: [1.0, 2.0]
+logging:
+  level: INFO

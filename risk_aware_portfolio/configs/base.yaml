@@ -1,0 +1,79 @@
+data:
+  input_path: data/processed/panel.parquet
+  alpha_path: null
+  max_abs_return: 0.95
+synthetic:
+  seed: 20261003
+  n_assets: 60
+  n_dates: 315
+  start_date: "2020-01-02"
+  alpha_strength: 0.0006
+  specific_volatility: 0.012
+  factor_volatility: 0.004
+risk_model:
+  industries: [industry_0, industry_1, industry_2, industry_3]
+  styles: [size, value, momentum, volatility, liquidity]
+  regression: wls
+  weight_power: 0.5
+  lookback: 126
+  min_observations: 63
+  covariance_method: ewma
+  specific_method: ewma
+  ewma_lambda: 0.94
+  variance_floor: 0.000001
+  eigenvalue_floor: 0.0000000001
+  specific_shrinkage: 0.15
+alpha:
+  winsorize: true
+  mad_multiplier: 5.0
+  neutralize: false
+  neutralization: joint
+  scale: 0.0006
+portfolio:
+  long_only: true
+  risk_aversion: 5.0
+  cost_penalty: 1.0
+  max_weight: 0.03
+  gross_limit: 1.0
+  turnover_limit: 0.30
+  industry_tolerance: 0.10
+  style_tolerance: 0.30
+  tracking_error_annual: 0.12
+  solver: CLARABEL
+  solver_options:
+    tol_gap_abs: 0.0000001
+    tol_gap_rel: 0.0000001
+    tol_feas: 0.00000001
+    max_iter: 300
+  constraint_tolerance: 0.000002
+  baseline_quantile: 0.20
+transaction_cost:
+  linear_bps: 5.0
+  impact_coefficient: 0.002
+  optimization_impact: true
+  trade_scale: 0.01
+backtest:
+  rebalance_frequency: weekly
+  annualization: 252
+  realized_risk_window: 21
+experiments:
+  risk_aversion: [1.0, 5.0, 20.0]
+  cost_penalty: [0.0, 1.0, 5.0]
+  position_limits: [0.02, 0.05, 0.10]
+  covariance_methods: [sample, ewma]
+  alpha_modes: [raw, neutralized]
+  rebalance_frequencies: [daily, weekly, monthly]
+  stress_seed: 807
+  alpha_noise_std: 0.50
+  covariance_perturbation: 0.25
+  cost_multiplier: 3.0
+  liquidity_multiplier: 4.0
+  volatility_multiplier: 2.0
+  local_alpha_noise_fraction: 0.01
+reporting:
+  rolling_sharpe_window: 63
+  rolling_volatility_window: 21
+  hac_lags: 5
+  bootstrap_block: 10
+  bootstrap_repetitions: 500
+  bootstrap_seed: 987

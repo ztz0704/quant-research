@@ -1,0 +1,73 @@
+seed: 20261004
+data:
+  source: file
+  provider: akshare_sina_cache
+  source_path: ../risk_aware_portfolio/data/processed/ashare_panel.parquet
+  input_path: data/raw/ashare_panel.parquet
+  features_path: data/processed/features.parquet
+  universe_policy: retrospective_fixed_60_stock_basket
+  vendor_publication_history_verified: false
+features:
+  additional_return_lag: 1
+  winsorize: mad
+  standardize: true
+  neutralize: false
+  min_cross_section: 20
+labels:
+  forward_horizon: 1
+validation:
+  mode: rolling
+  train_days: 126
+  validation_days: 42
+  test_days: 42
+  step_days: 42
+  embargo_days: 2
+  min_train_rows: 1000
+models:
+  enabled: [dummy, linear, ridge, lasso, elastic_net, random_forest, boosting]
+  tuning_metric: mean_rank_ic
+  grids:
+    ridge: [{alpha: 1.0}, {alpha: 100.0}]
+    lasso: [{alpha: 0.00001}, {alpha: 0.0001}]
+    elastic_net: [{alpha: 0.00001, l1_ratio: 0.5}, {alpha: 0.0001, l1_ratio: 0.5}]
+    random_forest:
+      - {n_estimators: 60, max_depth: 4, min_samples_leaf: 80, max_features: 0.7}
+      - {n_estimators: 60, max_depth: 6, min_samples_leaf: 80, max_features: 0.7}
+    boosting:
+      - {max_iter: 80, max_leaf_nodes: 7, learning_rate: 0.05, l2_regularization: 1.0}
+      - {max_iter: 80, max_leaf_nodes: 15, learning_rate: 0.05, l2_regularization: 1.0}
+portfolio:
+  quantiles: 10
+  cost_bps: [0, 5, 10, 20]
+  interpretation: diagnostic_full_fill_not_broker_simulation
+drift:
+  psi_bins: 10
+  rolling_window: 21
+  importance_repeats: 3
+  groups:
+    momentum: [momentum, mom_20, mom_60]
+    volatility: [volatility, vol_20, vol_60]
+    liquidity: [liquidity]
+retraining:
+  experiments: [5, 21, 63]
+robustness:
+  feature_noise_std: 0.1
+  label_noise_std: 0.5
+  seeds: [20261004, 20261005, 20261006]
+  window_days: [63, 126, 189]
+  selected_model: ridge
+  bootstrap_replications: 300
+  block_days: 10
+  sensitivity:
+    random_forest:
+      n_estimators: [30, 60]
+      max_depth: [3, 6]
+      min_samples_leaf: [40, 80]
+      max_features: [0.5, 1.0]
+    boosting:
+      max_iter: [40, 80]
+      learning_rate: [0.03, 0.1]
+      max_leaf_nodes: [7, 15]
+      l2_regularization: [1.0, 10.0]
+output:
+  directory: outputs

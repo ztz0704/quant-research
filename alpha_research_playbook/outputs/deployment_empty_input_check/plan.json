@@ -1,0 +1,5 @@
+{
+  "status": "blocked",
+  "reason": "Execution date is not an explicitly confirmed open session",
+  "ready_for_live": false
+}

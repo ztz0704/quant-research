@@ -1,0 +1,8 @@
+constraint,binding_frequency,n_solutions
+position_lower,1.0,51
+position_upper,1.0,51
+gross,1.0,51
+industry,0.058823529411764705,51
+style,0.39215686274509803,51
+tracking_error,0.0,51
+turnover,0.9803921568627451,51

@@ -1,0 +1,10 @@
+{
+  "asset": "000001",
+  "rows": 22,
+  "tencent_retrieval": "2026-10-05T08:06:07Z",
+  "eastmoney_retrieval": "2026-10-05T07:50:14Z",
+  "max_price_difference": 0.0,
+  "max_volume_relative_difference": 0.0,
+  "max_amount_relative_difference": 4.6735144288920616e-08,
+  "scope": "same historical sessions; separately retrieved snapshots, not a complete fresh batch"
+}

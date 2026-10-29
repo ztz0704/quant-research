@@ -1,0 +1,12 @@
+extends: base.yaml
+data:
+  source: synthetic
+  provider: controlled_engineering_simulation
+  input_path: data/engineering/panel.parquet
+  features_path: data/engineering/features.parquet
+synthetic:
+  days: 600
+  assets: 40
+  seed: 8
+  stationary: false
+  signal: true

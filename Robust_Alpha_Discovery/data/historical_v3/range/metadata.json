@@ -1,0 +1,196 @@
+{
+  "schema_version": "ashare-research-v2",
+  "panel_file": "canonical_market_panel.parquet",
+  "status": "EXPLORATORY_ONLY",
+  "formal_ready": false,
+  "units": {
+    "price": "CNY",
+    "volume": "shares",
+    "amount": "CNY"
+  },
+  "return_convention": "close_decision_next_open_to_following_open_simple",
+  "return_unit": "decimal_simple",
+  "timezone": "Asia/Shanghai",
+  "official_calendar": false,
+  "survivorship_free": false,
+  "publication_history_verified": false,
+  "calendar_evidence": "BaoStock sessions without primary exchange attestation",
+  "membership_evidence": "retrospective lifecycle; IPO inclusive, delist exclusive",
+  "industry_evidence": "vendor snapshot kept separately; no projection over dates",
+  "fields": {
+    "raw_open": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "raw_high": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "raw_low": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "raw_close": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "volume": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "amount": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "adj_factor": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "list_date": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "delist_date": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "industry": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "total_market_cap": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "float_market_cap": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "limit_up": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "limit_down": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "corporate_actions_version": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "universe_member": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "is_st": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "suspended": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "buyable": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "sellable": {
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+    },
+    "quote_asof": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "universe_asof": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "status_asof": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "industry_asof": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "capitalization_asof": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "adjustment_asof": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    },
+    "listing_asof": {
+      "status": "missing",
+      "source": null,
+      "version": null
+    }
+  },
+  "reference_files": {
+    "baostock_dividends_reference.parquet": "e6693ce465ab30a81fc0a3218163899ef7a864f10c31f91563bb5eadc9d5df5d",
+    "baostock_industry_reference.parquet": "e4998ce73dd47c8f649d1a8d9c61df67909d2184b77d74683780aa3438a51b82",
+    "baostock_hs300_reference.parquet": "947032be38132fcf4f66e0684ae63d636d98af1e5869c329f37a8b6ff8c5abd2",
+    "baostock_terminated_reference.parquet": "9742db7dc040cc8d815810914582ddd3228f15726f2fedf5a0f74d9d2b33626b",
+    "baostock_suspended_reference.parquet": "bc99fe01d29b3ab2786460afee3a45becde31f3f81ad8f0701e9d4889d9879f4",
+    "baostock_st_reference.parquet": "d328f8efe3468a6da809e7bde8d5201806092401af0f3ffadfdd512ea85b1608",
+    "akshare_delisted_sz_reference.parquet": "9ec705227a456a437d5a5aa4f8d9ba36ce81d6388308beba76928aacd79e6a92",
+    "akshare_delisted_sh_reference.parquet": "ac584e451b61586ffc9bf107f48f35f06ed3233ec7abe2f80c67066fbf2b5b5f",
+    "akshare_share_changes_reference.parquet": "7885696726bc287f5319017ea30aec3eb0e6505111ac2a8e9ada02e8cbbd6d58"
+  },
+  "files": {
+    "adjustment_events.parquet": "6d19fe08fbe8900acd9f4aafaf245bf859a55e129beb0cad06366182aee8c704",
+    "akshare_delisted_sh_reference.parquet": "ac584e451b61586ffc9bf107f48f35f06ed3233ec7abe2f80c67066fbf2b5b5f",
+    "akshare_delisted_sz_reference.parquet": "9ec705227a456a437d5a5aa4f8d9ba36ce81d6388308beba76928aacd79e6a92",
+    "akshare_share_changes_reference.parquet": "7885696726bc287f5319017ea30aec3eb0e6505111ac2a8e9ada02e8cbbd6d58",
+    "annual_coverage.parquet": "f710a2a35a86bb629bb8b2bd4747131a3621a84acf3f864fa16a7ba6a91252a0",
+    "baostock_dividends_reference.parquet": "e6693ce465ab30a81fc0a3218163899ef7a864f10c31f91563bb5eadc9d5df5d",
+    "baostock_hs300_reference.parquet": "947032be38132fcf4f66e0684ae63d636d98af1e5869c329f37a8b6ff8c5abd2",
+    "baostock_industry_reference.parquet": "e4998ce73dd47c8f649d1a8d9c61df67909d2184b77d74683780aa3438a51b82",
+    "baostock_st_reference.parquet": "d328f8efe3468a6da809e7bde8d5201806092401af0f3ffadfdd512ea85b1608",
+    "baostock_suspended_reference.parquet": "bc99fe01d29b3ab2786460afee3a45becde31f3f81ad8f0701e9d4889d9879f4",
+    "baostock_terminated_reference.parquet": "9742db7dc040cc8d815810914582ddd3228f15726f2fedf5a0f74d9d2b33626b",
+    "calendar.parquet": "2f3eb33469ee3104cfe7568c93a4d8712231d3a64fc0d4d50c57a08ca8c6a3fb",
+    "canonical_market_panel.parquet": "92718c7e0faa6a840501993c17866b31ce04e8552bb1fa3062fecec56ac47367",
+    "field_missingness.parquet": "7f00631d839adfa4a5a4a3877ec6376a3f0b1e06985274ef043aa0e139d3311d",
+    "historical_discovery.parquet": "35aa769277c2d744706b97964a9bccc95897e942224ba35699ef745866a0242b",
+    "historical_membership.parquet": "b686640238c2f84b22316e70860228b16ce49ea5ee03154a461396de2f357d3e",
+    "lifecycle_registry.parquet": "a9994307b18cb5777a121020fe08f6415d003aea78c6301f13490a9f11600226",
+    "lifecycle_state_changes.parquet": "87f1b4fac6983b27a2094160e60395938890dd372de9f5c1390aa602b1c1bf0c",
+    "unexplained_quote_gaps.parquet": "6d4729f1adf36f674aacf6adc6617dca3d8c23ab568af6f39eecf16a7ccd6a18",
+    "unit_anomalies.parquet": "84672afa6365789b2ec4a1864e5f622f199a6d7914ef1e71f09a8861778eb52f"
+  },
+  "audit_files": {
+    "lifecycle_registry": {
+      "filename": "lifecycle_registry.parquet",
+      "sha256": "a9994307b18cb5777a121020fe08f6415d003aea78c6301f13490a9f11600226"
+    }
+  }
+}

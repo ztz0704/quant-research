@@ -1,0 +1,9 @@
+........................................................................ [ 75%]
+........................                                                 [100%]
+============================== warnings summary ===============================
+tests/test_optimizer.py::test_all_optimizer_constraints[True]
+  C:\Users\19388\Desktop\��Ŀ\risk_aware_portfolio\src\risk_aware_portfolio\portfolio\optimizer.py:81: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+    problem.solve(solver=p["solver"], **p.get("solver_options", {}))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+96 passed, 1 warning in 33.75s

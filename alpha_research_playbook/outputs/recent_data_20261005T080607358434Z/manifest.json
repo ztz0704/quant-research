@@ -1,0 +1,77 @@
+{
+  "retrieved_at_utc": "2026-10-05T08:06:07.358434+00:00",
+  "expected_last_session": "2026-09-30",
+  "start_date": "2026-08-31",
+  "adjustment": "none",
+  "volume_unit": "shares",
+  "amount_unit": "CNY",
+  "akshare_version": "1.19.1",
+  "script_sha256": "22494b1729cbe33ec7c61f3f40d36370d2f1e2f1e93f3e83ef45bb34be833ce9",
+  "results": [
+    {
+      "provider": "tencent",
+      "asset": "000001",
+      "passed": true,
+      "volume_multiplier": 100,
+      "vendor_function_sha256": "f47fa6616556d5022ce710161fabffe99bb75324ab2740d3e4fa0d1fc7c4f4a6",
+      "rows": 22,
+      "last_date": "2026-09-30",
+      "reasons": [],
+      "files": {
+        "tencent_000001.parquet": "24408027f757f4de2aacf540d987dc8bda14c0c886a7d594c58a6e26387de454",
+        "tencent_000001.vendor.parquet": "6b29c023327aa054f70c57a8904cc3b15c03671b8f0153f46073572d8f1503db"
+      }
+    },
+    {
+      "provider": "eastmoney",
+      "asset": "000001",
+      "passed": false,
+      "reasons": [
+        "vendor_worker_failed"
+      ],
+      "error_type": "ProxyError",
+      "files": {}
+    },
+    {
+      "provider": "tencent",
+      "asset": "600000",
+      "passed": true,
+      "volume_multiplier": 1,
+      "vendor_function_sha256": "f47fa6616556d5022ce710161fabffe99bb75324ab2740d3e4fa0d1fc7c4f4a6",
+      "rows": 22,
+      "last_date": "2026-09-30",
+      "reasons": [],
+      "files": {
+        "tencent_600000.parquet": "78b67cd6285326a5666130037f29d9cc61c6864b959530c1e45b94e7842c3362",
+        "tencent_600000.vendor.parquet": "20e7cab4f96bea21093c4e616dbcd844b089d9759d35804b559a3c4e74608b1a"
+      }
+    },
+    {
+      "provider": "eastmoney",
+      "asset": "600000",
+      "passed": false,
+      "reasons": [
+        "vendor_worker_failed"
+      ],
+      "error_type": "ProxyError",
+      "files": {}
+    }
+  ],
+  "comparisons": [
+    {
+      "asset": "000001",
+      "status": "unavailable_two_sources_required"
+    },
+    {
+      "asset": "600000",
+      "status": "unavailable_two_sources_required"
+    }
+  ],
+  "all_passed": false,
+  "limits": [
+    "Small source probe, not full-universe coverage or PIT certification",
+    "Expected last session is caller-confirmed, not inferred from weekdays",
+    "Vendor requests may internally fetch more history; it is not evaluated",
+    "No strategy selection, orders, brokerage access or synthetic fallback"
+  ]
+}

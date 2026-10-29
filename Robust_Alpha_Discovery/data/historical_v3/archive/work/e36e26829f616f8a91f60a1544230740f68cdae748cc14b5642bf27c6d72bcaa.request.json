@@ -1,0 +1,13 @@
+{
+  "source": "baostock",
+  "endpoint": "quotes",
+  "params": {
+    "code": "sz.000001",
+    "start_date": "2017-01-01",
+    "end_date": "2017-12-31",
+    "fields": "date,code,open,high,low,close,preclose,volume,amount,turn,tradestatus,isST",
+    "adjustflag": "3"
+  },
+  "archive_schema": 1,
+  "direct": true
+}

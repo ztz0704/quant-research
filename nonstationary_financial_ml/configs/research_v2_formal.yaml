@@ -1,0 +1,16 @@
+# This template MUST remain blocked until actual PIT sources/sample boundaries are frozen.
+extends: research_v2_historical.yaml
+phase: development
+protocol:
+  status: draft
+  empirical_status: draft
+  holdout_confirmed_untouched: false
+data:
+  source: bundle
+  bundle_directory: data/raw/pit_v2_bundle
+  load_end: null
+  min_amount_20: 10000000
+statistics:
+  bootstrap_replications: 2000
+output:
+  directory: outputs/research_v2/formal_development

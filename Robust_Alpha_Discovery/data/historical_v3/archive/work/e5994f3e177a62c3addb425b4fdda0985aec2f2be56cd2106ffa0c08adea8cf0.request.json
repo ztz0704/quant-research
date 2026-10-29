@@ -1,0 +1,11 @@
+{
+  "source": "baostock",
+  "endpoint": "adjustment",
+  "params": {
+    "code": "sh.600036",
+    "start_date": "1990-01-01",
+    "end_date": "2015-12-31"
+  },
+  "archive_schema": 1,
+  "direct": true
+}

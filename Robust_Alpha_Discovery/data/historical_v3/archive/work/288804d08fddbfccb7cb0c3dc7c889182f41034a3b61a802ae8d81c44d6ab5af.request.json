@@ -1,0 +1,11 @@
+{
+  "source": "akshare",
+  "endpoint": "share_changes",
+  "params": {
+    "symbol": "600000",
+    "start_date": "20150101",
+    "end_date": "20151231"
+  },
+  "archive_schema": 1,
+  "direct": true
+}

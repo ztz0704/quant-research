@@ -1,0 +1,3 @@
+method,n_forecasts,mean_effective_observations,mean_asset_condition_number,mean_factor_condition_number,minimum_asset_eigenvalue,maximum_asset_eigenvalue,minimum_factor_eigenvalue,mean_relative_covariance_change,mean_relative_factor_covariance_error
+sample,294,119.14285714285714,195.03773644578436,115.070578534614,2.6174809835080194e-05,0.00865980111195841,1.7525204618423389e-06,0.04714765669987398,
+ewma,294,32.24037767608904,211.94821704158468,170.21839533250576,1.9254982979808427e-05,0.014224565233868352,7.090498127834336e-07,0.1123103009566621,

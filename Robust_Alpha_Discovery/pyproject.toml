@@ -1,0 +1,51 @@
+[project]
+name = "robust-alpha-discovery"
+version = "0.1.0"
+description = "Reproducible cross-sectional alpha research under nonstationarity and multiple testing."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "akshare>=1.19.1",
+    "baostock>=0.9.4",
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pyarrow>=15",
+    "pyyaml>=6.0",
+    "scikit-learn>=1.4",
+    "scipy>=1.12",
+    "statsmodels>=0.14",
+]
+
+[project.scripts]
+robust-alpha-demo = "robust_alpha.pipeline:main"
+robust-alpha-fetch-akshare = "robust_alpha.data.akshare:main"
+robust-alpha-history = "robust_alpha.data.historical:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/robust_alpha"]
+
+[tool.pytest.ini_options]
+addopts = "-ra -p no:cacheprovider"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.uv]
+cache-dir = "../tmp/uv-cache"

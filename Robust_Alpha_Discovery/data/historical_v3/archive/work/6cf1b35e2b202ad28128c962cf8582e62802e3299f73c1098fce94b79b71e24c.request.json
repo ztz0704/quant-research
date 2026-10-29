@@ -1,0 +1,7 @@
+{
+  "source": "baostock",
+  "endpoint": "basic",
+  "params": {},
+  "archive_schema": 1,
+  "direct": true
+}

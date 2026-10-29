@@ -1,0 +1,1 @@
+{"source": "baostock", "endpoint": "universe", "status": "failed", "error_type": "AttributeError", "error": "module 'baostock' has no attribute 'query_terminated_stocks'", "downloaded_at": "2026-10-13T05:38:14.491740+00:00"}

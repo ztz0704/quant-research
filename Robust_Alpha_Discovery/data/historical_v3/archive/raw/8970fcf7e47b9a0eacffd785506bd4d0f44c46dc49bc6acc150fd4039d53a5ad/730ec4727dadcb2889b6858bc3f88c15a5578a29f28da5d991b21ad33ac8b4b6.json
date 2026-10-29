@@ -1,0 +1,1 @@
+{"source": "baostock", "endpoint": "suspended", "status": "ok", "columns": ["updateDate", "code", "code_name"], "data": [["2015-01-05", "sh.601268", "*ST二重"], ["2015-01-05", "sz.000520", "长航凤凰"], ["2015-01-05", "sz.000594", "国恒退"], ["2015-01-05", "sz.002506", "协鑫集成"]], "sdk_version": "0.9.4", "downloaded_at": "2026-10-13T05:39:30.876220+00:00"}

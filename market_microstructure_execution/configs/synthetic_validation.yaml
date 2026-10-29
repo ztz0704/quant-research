@@ -1,0 +1,19 @@
+extends: configs/base.yaml
+data:
+  source: synthetic
+  provider: engineering_validation_only
+  raw_path: data/raw/synthetic_orderbook.parquet
+  input_path: data/processed/synthetic_orderbook.parquet
+  features_path: data/processed/synthetic_features.parquet
+market:
+  type: generic
+  lot_size: 1
+strategy:
+  max_inventory: 10.0
+  trade_size: 2.0
+fees:
+  maker_bps: -0.5
+  taker_bps: 2.0
+  minimum_commission: 0.0
+  sell_tax_bps: 0.0
+  transfer_bps: 0.0

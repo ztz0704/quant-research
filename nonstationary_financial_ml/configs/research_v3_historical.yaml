@@ -1,0 +1,22 @@
+extends: research_v2_historical.yaml
+interface_version: ashare-open-events-v3
+execution_evidence: assumed_native_bar_full_fill
+risk_config: ../risk_aware_portfolio/configs/ashare.yaml
+open_risk:
+  styles: [size, momentum_20, volatility_20, illiquidity_20]
+  min_specific_observations: 20
+  allow_specific_prior: true
+risk_portfolio:
+  # Strict positive interior for share accounting; no post-solve clipping.
+  min_weight: 0.000001
+event_portfolio:
+  initial_cash: 1000000
+  terminal_liquidation: true
+  cost_definition: reduced_form_full_l1_without_capacity_claim
+diagnostics:
+  window_days: [84, 126, 168]
+  retrain_sessions: [5, 21, 42]
+  risk_aversion: [1.0, 5.0, 20.0]
+  permutation_seed: 947
+output:
+  directory: outputs/research_v3/historical_integration

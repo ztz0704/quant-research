@@ -1,0 +1,32 @@
+{
+  "files": {
+    "acceptance.json": "077b556c535d45f1690f620804f91f1315a757ff321b5c83073d1352a11d9345",
+    "adjustment_events.parquet": "3e3b593e8ab4d2cf371c157973463c3e8163a1bc4fa0b4b8c152e104cb1d8cf5",
+    "akshare_delisted_sh_reference.parquet": "ac584e451b61586ffc9bf107f48f35f06ed3233ec7abe2f80c67066fbf2b5b5f",
+    "akshare_delisted_sz_reference.parquet": "9ec705227a456a437d5a5aa4f8d9ba36ce81d6388308beba76928aacd79e6a92",
+    "akshare_share_changes_reference.parquet": "7885696726bc287f5319017ea30aec3eb0e6505111ac2a8e9ada02e8cbbd6d58",
+    "annual_coverage.parquet": "1d9e2159dee289b754d648fb313752ac68c9c6fbaa2fc48a8cb4f5fd61d9692e",
+    "baostock_dividends_reference.parquet": "e6693ce465ab30a81fc0a3218163899ef7a864f10c31f91563bb5eadc9d5df5d",
+    "baostock_hs300_reference.parquet": "947032be38132fcf4f66e0684ae63d636d98af1e5869c329f37a8b6ff8c5abd2",
+    "baostock_industry_reference.parquet": "e4998ce73dd47c8f649d1a8d9c61df67909d2184b77d74683780aa3438a51b82",
+    "baostock_st_reference.parquet": "d328f8efe3468a6da809e7bde8d5201806092401af0f3ffadfdd512ea85b1608",
+    "baostock_suspended_reference.parquet": "bc99fe01d29b3ab2786460afee3a45becde31f3f81ad8f0701e9d4889d9879f4",
+    "baostock_terminated_reference.parquet": "9742db7dc040cc8d815810914582ddd3228f15726f2fedf5a0f74d9d2b33626b",
+    "calendar.parquet": "f887389d2370937074efb8bba86eca694718195bacd84c34ed457cb809091979",
+    "canonical_market_panel.parquet": "9f565ff6cfed51fa5c564476e57f80cd5f52c7e9e3e772e803b93b5591871297",
+    "download_manifest.json": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+    "field_missingness.parquet": "fefacf369bf66bd96d2230dd83dcde20f627ed6918d1f5557266831029c41f99",
+    "historical_discovery.parquet": "35aa769277c2d744706b97964a9bccc95897e942224ba35699ef745866a0242b",
+    "historical_membership.parquet": "62a17baf2261807563abcf2cd02c622f1e6e9ef925d35273587421601c161c54",
+    "incomplete_partitions.json": "366f2eae0ae6299888c4226dc1c5e52dfa502f585f7cf13f378f41fab8d41dda",
+    "lifecycle_registry.parquet": "a9994307b18cb5777a121020fe08f6415d003aea78c6301f13490a9f11600226",
+    "lifecycle_state_changes.parquet": "694fc33597c46cb8e5eb08b044689ac8fbd67dae7c579a7af5cdf897ff0d164c",
+    "metadata.json": "051295f71047d29d46b9b9ea8d6ca865743eb086442d43722eeda9d74c6d4eb5",
+    "plan.json": "ba4d9a063fd9b6b278353e1bebfea2fc5909281ca9bbbe9ef536c512d3f853f5",
+    "unexplained_quote_gaps.parquet": "6d4729f1adf36f674aacf6adc6617dca3d8c23ab568af6f39eecf16a7ccd6a18",
+    "unit_anomalies.parquet": "84672afa6365789b2ec4a1864e5f622f199a6d7914ef1e71f09a8861778eb52f",
+    "v3_pit_audit.json": "2958073b0e3cfb8e43cd02a07123be0ac7a93d40fdeb0ef0f96a8171bb3be572"
+  },
+  "status": "EXPLORATORY_ONLY",
+  "source_manifest_sha256": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c"
+}

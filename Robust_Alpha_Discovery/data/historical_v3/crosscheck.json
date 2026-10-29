@@ -1,0 +1,49 @@
+{
+  "quotes": [
+    {
+      "code": "sh.600000",
+      "endpoint": "eastmoney",
+      "overlap_rows": 5,
+      "price_match": true,
+      "volume_match": true,
+      "amount_match": true,
+      "volume_bao_to_ak_median": 1.0000000414812111,
+      "accepted_as_primary": false
+    },
+    {
+      "code": "sh.600000",
+      "endpoint": "tencent",
+      "overlap_rows": 5,
+      "price_match": true,
+      "volume_match": true,
+      "amount_match": true,
+      "volume_bao_to_ak_median": 0.9999999896296977,
+      "accepted_as_primary": false
+    },
+    {
+      "code": "sz.000001",
+      "endpoint": "eastmoney",
+      "overlap_rows": 5,
+      "price_match": true,
+      "volume_match": true,
+      "amount_match": true,
+      "volume_bao_to_ak_median": 1.000000149178029,
+      "accepted_as_primary": false
+    },
+    {
+      "code": "sz.000001",
+      "endpoint": "tencent",
+      "overlap_rows": 5,
+      "price_match": true,
+      "volume_match": false,
+      "amount_match": true,
+      "volume_bao_to_ak_median": 100.0,
+      "accepted_as_primary": false
+    }
+  ],
+  "calendar_symmetric_difference": [],
+  "calendar_sessions": 2674,
+  "official_pit_certified": false,
+  "policy": "Mismatched supplements excluded; never silently rescale a supplier",
+  "primary_ohlcv_crosscheck_passed": true
+}

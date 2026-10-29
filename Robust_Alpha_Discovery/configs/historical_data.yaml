@@ -1,0 +1,13 @@
+# Values are acquisition settings, never permissions or PIT attestations.
+start: '2015-01-01'
+end: '2025-12-31'
+test_year: 2015
+output: data/historical_v3
+max_assets: 1000
+# Keep small validated data when year acceptance cannot support formal research.
+allow_exploratory_bulk: false
+requests:
+  direct: true
+  pause: 1.0
+  retries: 3
+  timeout: 90

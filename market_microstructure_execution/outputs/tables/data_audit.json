@@ -1,0 +1,11 @@
+{
+  "source": "file",
+  "provider": "public_szse_reconstructed",
+  "raw_path": "data/raw/ashare_orderbook.parquet",
+  "seed": 20261003,
+  "input_rows": 14179,
+  "output_rows": 14179,
+  "removed": 0,
+  "removed_percentage": 0.0,
+  "reasons": {}
+}

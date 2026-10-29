@@ -1,0 +1,9 @@
+{
+  "status": "BLOCKED_FORMAL_PIT",
+  "reason": "Year lacks authenticated PIT; exploratory bulk disabled",
+  "target": [
+    "2015-01-01",
+    "2025-12-31"
+  ],
+  "data_preserved": true
+}

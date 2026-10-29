@@ -1,0 +1,29 @@
+{
+  "raw_order_rows": 365025,
+  "raw_trade_rows": 324007,
+  "scope_rows_by_asset": {
+    "300274.SZ": 279784,
+    "000400.SZ": 222651,
+    "300122.SZ": 142466,
+    "300288.SZ": 25376,
+    "300918.SZ": 18755
+  },
+  "selected_message_rows": 222651,
+  "outside_predeclared_asset_rows": 466381,
+  "asset": "000400.SZ",
+  "date": "2022.06.01",
+  "channel": 2011,
+  "reception_clock_adjusted_rows": 0,
+  "reception_clock_max_adjustment_ms": 0.0,
+  "sequence_gaps": 129983,
+  "gap_note": "Gaps may contain other securities on the channel, not necessarily missing target messages",
+  "order_type_2": 115029,
+  "outside_continuous_session_endpoints": 6480,
+  "order_type_1": 290,
+  "crossed_snapshot": 41,
+  "order_type_3": 10,
+  "snapshot_rows": 14179,
+  "open_order_count": 4665,
+  "external_reference_validation": "not_available",
+  "frequency_ms": 1000
+}

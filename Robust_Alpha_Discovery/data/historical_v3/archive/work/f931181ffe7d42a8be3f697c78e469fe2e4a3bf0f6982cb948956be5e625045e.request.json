@@ -1,0 +1,9 @@
+{
+  "source": "akshare",
+  "endpoint": "delisted_sh",
+  "params": {
+    "symbol": "全部"
+  },
+  "archive_schema": 1,
+  "direct": true
+}

@@ -1,0 +1,10 @@
+extends: research_v2_historical.yaml
+phase: engineering_validation
+data:
+  source: synthetic
+synthetic:
+  days: 300
+  assets: 40
+  seed: 8
+output:
+  directory: outputs/research_v2/engineering_validation

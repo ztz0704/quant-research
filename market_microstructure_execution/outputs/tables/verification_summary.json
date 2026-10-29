@@ -1,0 +1,15 @@
+{
+  "verified_utc": "2026-10-06T02:22:26.741962+00:00",
+  "status": "passed",
+  "raw_source_hashes_verified": 2,
+  "snapshot_rows": 14179,
+  "oos_rows": 31500,
+  "walk_forward_folds": 14,
+  "model_execution_cases": 10,
+  "ledger_events_verified": 105000,
+  "maximum_pnl_reconciliation_error_cny": 3.842615114990622e-10,
+  "optimal_execution_cases": 160,
+  "figures": 33,
+  "notebooks": 4,
+  "notebook_execution_required": true
+}

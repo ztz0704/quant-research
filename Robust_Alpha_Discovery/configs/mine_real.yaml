@@ -1,0 +1,95 @@
+# Real cached A shares. New experiments should copy this file and change output.directory.
+project:
+  name: ashare-factor-mining
+  random_seed: 20261005
+data:
+  source: parquet
+  provider: akshare
+  path: data/raw/akshare_smoke.parquet
+  start_date: "2018-01-02"
+  end_date: "2020-12-31"
+  endpoint: tencent
+  adjust: qfq
+  timeout_seconds: 20
+  retries: 3
+  pause_seconds: 0.15
+  # Retrospective fixed pool, not PIT membership. Change with a declared experiment.
+  symbols: ["000001", "000002", "000063", "000069", "000100", "000157", "000333",
+            "000338", "000425", "000538", "000568", "000625", "000651", "000725",
+            "000768", "000776", "000858", "000895", "000963", "002027", "600000",
+            "600009", "600015", "600016", "600018", "600019", "600028", "600029",
+            "600030", "600031", "600036", "600048", "600050", "600104", "600111",
+            "600150", "600276", "600309", "600519", "600900"]
+  min_history: 125
+timing:
+  target_column: target_o2o
+  require_entry_tradable: true
+  require_exit_tradable: true
+preprocessing:
+  method: rank_gaussian
+signals:
+  - mom_5
+  - mom_20
+  - mom_60
+  - mom_120
+  - mom_20_skip5
+  - rev_1
+  - rev_3
+  - rev_5
+  - neg_vol_10
+  - neg_vol_20
+  - neg_vol_60
+  - neg_range_10
+  - neg_range_20
+  - neg_amihud_20
+  - neg_amihud_60
+  - volshock_5_20
+  - ma_gap_20
+  - ma_gap_60
+  - mom20_over_vol20
+  - mom60_over_vol60
+  - reversal_scaled_by_vol
+  - liquidity_pressure
+  - negative_price_volume_correlation
+custom_signals:
+  reversal_scaled_by_vol:
+    expression: "-ts_sum(ret_1, 5) / (ts_std(ret_1, 20) + 0.000001)"
+    direction: 1
+    description: "Predeclared short-term reversal divided by trailing volatility"
+  liquidity_pressure:
+    expression: "-ret_1 * ts_mean(abs(ret_1) / (amount + 1), 20)"
+    direction: 1
+    description: "Predeclared temporary price pressure and illiquidity interaction"
+  negative_price_volume_correlation:
+    expression: "-ts_corr(ret_1, log(volume + 1), 20)"
+    direction: 1
+    description: "Predeclared negative trailing price/volume correlation"
+evaluation:
+  annualization: 252
+  min_assets_per_date: 20
+  hac_maxlags: 5
+  quantile: 0.20
+walk_forward:
+  train_years: 2
+  top_k: 3
+costs:
+  bps: [0, 10, 20, 30]
+multiple_testing:
+  alpha: 0.05
+  block_length: 20
+  bootstrap_replications: 300
+mining:
+  train: ["2018-01-02", "2018-12-31"]
+  validation: ["2019-01-01", "2019-12-31"]
+  test: ["2020-01-01", "2020-12-31"]
+  test_scope: exploratory  # Already viewed historical years, never called untouched.
+  min_train_dates: 100
+  min_validation_dates: 100
+  p_threshold: 0.05
+  min_return_coverage: 1.0
+  screen_cost_bps: 10
+  max_correlation: 0.80
+  max_selected: 5
+output:
+  panel_path: data/processed/mined_factor_panel.parquet
+  directory: reports/generated/factor_mining

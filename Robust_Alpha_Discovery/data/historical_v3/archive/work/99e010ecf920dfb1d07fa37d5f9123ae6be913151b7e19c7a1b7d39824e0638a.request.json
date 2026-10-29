@@ -1,0 +1,9 @@
+{
+  "source": "baostock",
+  "endpoint": "st",
+  "params": {
+    "date": "2015-01-05"
+  },
+  "archive_schema": 1,
+  "direct": true
+}

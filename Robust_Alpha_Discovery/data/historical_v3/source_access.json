@@ -1,0 +1,1151 @@
+{
+  "sources": [
+    {
+      "source": "tushare",
+      "status": "not_configured",
+      "permissions": "not_tested; no environment credential",
+      "token_names": [
+        "TUSHARE_TOKEN",
+        "TUSHARE_API_TOKEN",
+        "TS_TOKEN",
+        "TUSHARE_PRO_TOKEN"
+      ]
+    },
+    {
+      "source": "baostock",
+      "endpoint": "calendar",
+      "params": {
+        "start_date": "2015-01-01",
+        "end_date": "2015-01-09"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 9,
+      "columns": [
+        "calendar_date",
+        "is_trading_day"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "calendar_date": {
+          "min": "2015-01-01",
+          "max": "2015-01-09"
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "basic",
+      "params": {},
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 8993,
+      "columns": [
+        "code",
+        "code_name",
+        "ipoDate",
+        "outDate",
+        "type",
+        "status"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "ipoDate": {
+          "min": "1990-12-10",
+          "max": "2026-10-12"
+        },
+        "outDate": {
+          "min": "",
+          "max": "2026-11-02"
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "universe",
+      "params": {
+        "day": "2015-01-05"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 3232,
+      "columns": [
+        "code",
+        "tradeStatus",
+        "code_name"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {}
+    },
+    {
+      "source": "baostock",
+      "endpoint": "quotes",
+      "params": {
+        "code": "sh.600000",
+        "fields": "date,code,open,high,low,close,preclose,volume,amount,turn,tradestatus,isST",
+        "start_date": "2015-01-05",
+        "end_date": "2015-01-09",
+        "adjustflag": "3"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 5,
+      "columns": [
+        "date",
+        "code",
+        "open",
+        "high",
+        "low",
+        "close",
+        "preclose",
+        "volume",
+        "amount",
+        "turn",
+        "tradestatus",
+        "isST"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "date": {
+          "min": "2015-01-05",
+          "max": "2015-01-09"
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "adjustment",
+      "params": {
+        "code": "sh.600000",
+        "start_date": "1990-01-01",
+        "end_date": "2025-12-31"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 26,
+      "columns": [
+        "code",
+        "dividOperateDate",
+        "foreAdjustFactor",
+        "backAdjustFactor",
+        "adjustFactor"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "dividOperateDate": {
+          "min": "1999-11-10",
+          "max": "2025-07-16"
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "dividends",
+      "params": {
+        "code": "sh.600000",
+        "year": "2015",
+        "yearType": "operate"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 1,
+      "columns": [
+        "code",
+        "dividPreNoticeDate",
+        "dividAgmPumDate",
+        "dividPlanAnnounceDate",
+        "dividPlanDate",
+        "dividRegistDate",
+        "dividOperateDate",
+        "dividPayDate",
+        "dividStockMarketDate",
+        "dividCashPsBeforeTax",
+        "dividCashPsAfterTax",
+        "dividStocksPs",
+        "dividCashStock",
+        "dividReserveToStockPs"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "dividPreNoticeDate": {
+          "min": "",
+          "max": ""
+        },
+        "dividAgmPumDate": {
+          "min": "2015-05-16",
+          "max": "2015-05-16"
+        },
+        "dividPlanAnnounceDate": {
+          "min": "2015-03-19",
+          "max": "2015-03-19"
+        },
+        "dividPlanDate": {
+          "min": "2015-06-16",
+          "max": "2015-06-16"
+        },
+        "dividRegistDate": {
+          "min": "2015-06-19",
+          "max": "2015-06-19"
+        },
+        "dividOperateDate": {
+          "min": "2015-06-23",
+          "max": "2015-06-23"
+        },
+        "dividPayDate": {
+          "min": "2015-06-23",
+          "max": "2015-06-23"
+        },
+        "dividStockMarketDate": {
+          "min": "",
+          "max": ""
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "industry",
+      "params": {
+        "date": "2015-01-05"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 2674,
+      "columns": [
+        "updateDate",
+        "code",
+        "code_name",
+        "industry",
+        "industryClassification"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "updateDate": {
+          "min": "2015-01-05",
+          "max": "2015-01-05"
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "hs300",
+      "params": {
+        "date": "2015-01-05"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 300,
+      "columns": [
+        "updateDate",
+        "code",
+        "code_name"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "updateDate": {
+          "min": "2015-01-05",
+          "max": "2015-01-05"
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "terminated",
+      "params": {
+        "date": "2015-12-31"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 88,
+      "columns": [
+        "updateDate",
+        "code",
+        "code_name"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "updateDate": {
+          "min": "2015-12-28",
+          "max": "2015-12-28"
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "suspended",
+      "params": {
+        "date": "2015-01-05"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 4,
+      "columns": [
+        "updateDate",
+        "code",
+        "code_name"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "updateDate": {
+          "min": "2015-01-05",
+          "max": "2015-01-05"
+        }
+      }
+    },
+    {
+      "source": "baostock",
+      "endpoint": "st",
+      "params": {
+        "date": "2015-01-05"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 7,
+      "columns": [
+        "updateDate",
+        "code",
+        "code_name"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "updateDate": {
+          "min": "2015-01-05",
+          "max": "2015-01-05"
+        }
+      }
+    },
+    {
+      "source": "akshare",
+      "endpoint": "eastmoney",
+      "params": {
+        "symbol": "600000",
+        "start_date": "20150105",
+        "end_date": "20150109",
+        "adjust": "",
+        "timeout": 25
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 5,
+      "columns": [
+        "日期",
+        "股票代码",
+        "开盘",
+        "收盘",
+        "最高",
+        "最低",
+        "成交量",
+        "成交额",
+        "振幅",
+        "涨跌幅",
+        "涨跌额",
+        "换手率"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "日期": {
+          "min": "2015-01-05T00:00:00.000",
+          "max": "2015-01-09T00:00:00.000"
+        }
+      }
+    },
+    {
+      "source": "akshare",
+      "endpoint": "tencent",
+      "params": {
+        "symbol": "sh600000",
+        "start_date": "20150105",
+        "end_date": "20150109",
+        "adjust": "",
+        "timeout": 25
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 5,
+      "columns": [
+        "date",
+        "open",
+        "close",
+        "high",
+        "low",
+        "volume",
+        "turnover",
+        "amount"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "date": {
+          "min": "2015-01-05T00:00:00.000",
+          "max": "2015-01-09T00:00:00.000"
+        }
+      }
+    },
+    {
+      "source": "akshare",
+      "endpoint": "calendar",
+      "params": {},
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 8797,
+      "columns": [
+        "trade_date"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "trade_date": {
+          "min": "1990-12-19T00:00:00.000",
+          "max": "2026-12-31T00:00:00.000"
+        }
+      }
+    },
+    {
+      "source": "akshare",
+      "endpoint": "delisted_sz",
+      "params": {
+        "symbol": "终止上市公司"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 208,
+      "columns": [
+        "证券代码",
+        "证券简称",
+        "上市日期",
+        "终止上市日期"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "上市日期": {
+          "min": "1990-12-01T00:00:00.000",
+          "max": "2019-10-29T00:00:00.000"
+        },
+        "终止上市日期": {
+          "min": "1999-07-12T00:00:00.000",
+          "max": "2026-07-17T00:00:00.000"
+        }
+      }
+    },
+    {
+      "source": "akshare",
+      "endpoint": "delisted_sh",
+      "params": {
+        "symbol": "全部"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 159,
+      "columns": [
+        "公司代码",
+        "公司简称",
+        "上市日期",
+        "暂停上市日期"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "上市日期": {
+          "min": "1990-12-19T00:00:00.000",
+          "max": "2022-05-25T00:00:00.000"
+        },
+        "暂停上市日期": {
+          "min": "2001-04-25T00:00:00.000",
+          "max": "2026-07-06T00:00:00.000"
+        }
+      }
+    },
+    {
+      "source": "akshare",
+      "endpoint": "share_changes",
+      "params": {
+        "symbol": "600000",
+        "start_date": "20150101",
+        "end_date": "20151231"
+      },
+      "pit_evidence": "vendor history; publication/revision archive not certified",
+      "status": "accessible",
+      "rows": 3,
+      "columns": [
+        "证券简称",
+        "机构名称",
+        "境外法人持股",
+        "证券投资基金持股",
+        "国家持股-受限",
+        "国有法人持股",
+        "配售法人股",
+        "发起人股份",
+        "未流通股份",
+        "其中：境外自然人持股",
+        "其他流通受限股份",
+        "其他流通股",
+        "外资持股-受限",
+        "内部职工股",
+        "境外上市外资股-H股",
+        "其中：境内法人持股",
+        "自然人持股",
+        "人民币普通股",
+        "国有法人持股-受限",
+        "一般法人持股",
+        "控股股东、实际控制人",
+        "其中：限售H股",
+        "变动原因",
+        "公告日期",
+        "境内法人持股",
+        "证券代码",
+        "变动日期",
+        "战略投资者持股",
+        "国家持股",
+        "其中：限售B股",
+        "其他未流通股",
+        "流通受限股份",
+        "优先股",
+        "高管股",
+        "总股本",
+        "其中：限售高管股",
+        "转配股",
+        "境内上市外资股-B股",
+        "其中：境外法人持股",
+        "募集法人股",
+        "已流通股份",
+        "其中：境内自然人持股",
+        "其他内资持股-受限",
+        "变动原因编码"
+      ],
+      "permissions": "observed_this_call_only",
+      "returned_date_range": {
+        "公告日期": {
+          "min": "2015-08-20T00:00:00.000",
+          "max": "2016-04-07T00:00:00.000"
+        },
+        "变动日期": {
+          "min": "2015-06-30T00:00:00.000",
+          "max": "2015-12-31T00:00:00.000"
+        }
+      }
+    }
+  ],
+  "local_inventory": [
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\Robust_Alpha_Discovery\\data\\processed\\akshare_smoke_research_panel.parquet",
+      "sha256": "7e429e0c928857dcf0b627e370fe2489db922a93a96e92a6942d38c6a389c574",
+      "bytes": 2650675,
+      "rows": 29200,
+      "columns": [
+        "date",
+        "asset",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "amount",
+        "universe_member",
+        "tradable",
+        "history_count",
+        "eligible",
+        "entry_date",
+        "exit_date",
+        "entry_open",
+        "exit_open",
+        "entry_tradable",
+        "exit_tradable",
+        "target_o2o",
+        "target_valid",
+        "research_eligible",
+        "mom_5",
+        "mom_20",
+        "rev_1",
+        "neg_vol_20",
+        "neg_amihud_20",
+        "z__mom_5",
+        "z__mom_20",
+        "z__rev_1",
+        "z__neg_vol_20",
+        "z__neg_amihud_20"
+      ],
+      "date_min": "2018-01-02 00:00:00",
+      "date_max": "2020-12-31 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\Robust_Alpha_Discovery\\data\\processed\\demo_research_panel.parquet",
+      "sha256": "63112e41c274f837149ebd61cc174b88a6333873869033a6a370afd9de294d6c",
+      "bytes": 16448848,
+      "rows": 54000,
+      "columns": [
+        "date",
+        "asset",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "amount",
+        "universe_member",
+        "tradable",
+        "history_count",
+        "eligible",
+        "entry_date",
+        "exit_date",
+        "entry_open",
+        "exit_open",
+        "entry_tradable",
+        "exit_tradable",
+        "target_o2o",
+        "target_valid",
+        "research_eligible",
+        "mom_5",
+        "mom_20",
+        "mom_60",
+        "mom_120",
+        "mom_20_skip5",
+        "rev_1",
+        "rev_3",
+        "rev_5",
+        "neg_vol_10",
+        "neg_vol_20",
+        "neg_vol_60",
+        "neg_range_10",
+        "neg_range_20",
+        "neg_amihud_20",
+        "neg_amihud_60",
+        "volshock_5_20",
+        "ma_gap_20",
+        "ma_gap_60",
+        "mom20_over_vol20",
+        "mom60_over_vol60",
+        "z__mom_5",
+        "z__mom_20",
+        "z__mom_60",
+        "z__mom_120",
+        "z__mom_20_skip5",
+        "z__rev_1",
+        "z__rev_3",
+        "z__rev_5",
+        "z__neg_vol_10",
+        "z__neg_vol_20",
+        "z__neg_vol_60",
+        "z__neg_range_10",
+        "z__neg_range_20",
+        "z__neg_amihud_20",
+        "z__neg_amihud_60",
+        "z__volshock_5_20",
+        "z__ma_gap_20",
+        "z__ma_gap_60",
+        "z__mom20_over_vol20",
+        "z__mom60_over_vol60"
+      ],
+      "date_min": "2018-01-02 00:00:00",
+      "date_max": "2021-06-14 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\Robust_Alpha_Discovery\\data\\raw\\akshare_smoke.parquet",
+      "sha256": "929c5a84372e0c64b34fdaca7ae35a582ab33979225301f6210ad7c72a48b068",
+      "bytes": 792483,
+      "rows": 29200,
+      "columns": [
+        "date",
+        "asset",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "amount",
+        "universe_member",
+        "tradable"
+      ],
+      "date_min": "2018-01-02 00:00:00",
+      "date_max": "2020-12-31 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\Robust_Alpha_Discovery\\data\\synthetic\\demo_ohlcv.parquet",
+      "sha256": "ccb6e899a6a8c9d74c39f60a31c1383faaf70d128096f7ec6b288d2b66039992",
+      "bytes": 3250497,
+      "rows": 54000,
+      "columns": [
+        "date",
+        "asset",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "amount",
+        "universe_member",
+        "tradable"
+      ],
+      "date_min": "2018-01-02 00:00:00",
+      "date_max": "2021-06-14 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\nonstationary_financial_ml\\data\\processed\\features.parquet",
+      "sha256": "13afdc7f35aa00b09d5b5db5af0c09e1e554e77c3a264d65abe05fc00aebdfdc",
+      "bytes": 4661449,
+      "rows": 21420,
+      "columns": [
+        "date",
+        "asset",
+        "industry",
+        "tradable",
+        "native_quote",
+        "return",
+        "market_cap",
+        "size",
+        "momentum",
+        "volatility",
+        "liquidity",
+        "alpha",
+        "feature_asof",
+        "shares_effective_date",
+        "adjustments_effective_date",
+        "rev_1",
+        "rev_5",
+        "mom_20",
+        "mom_60",
+        "vol_20",
+        "vol_60",
+        "return_feature_asof",
+        "eligible",
+        "raw__rev_1",
+        "raw__rev_5",
+        "raw__mom_20",
+        "raw__mom_60",
+        "raw__vol_20",
+        "raw__vol_60",
+        "raw__size",
+        "raw__momentum",
+        "raw__volatility",
+        "raw__liquidity",
+        "target",
+        "label_end",
+        "target_valid",
+        "direction"
+      ],
+      "date_min": "2022-07-15 00:00:00",
+      "date_max": "2023-12-29 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\nonstationary_financial_ml\\data\\raw\\ashare_panel.parquet",
+      "sha256": "16450e75f336ab18cfdcf0eaa1efc10f18903e716222a973f0b6d4e81276e701",
+      "bytes": 1330619,
+      "rows": 21420,
+      "columns": [
+        "date",
+        "asset",
+        "industry",
+        "tradable",
+        "native_quote",
+        "return",
+        "market_cap",
+        "size",
+        "momentum",
+        "volatility",
+        "liquidity",
+        "alpha",
+        "feature_asof",
+        "shares_effective_date",
+        "adjustments_effective_date"
+      ],
+      "date_min": "2022-07-15 00:00:00",
+      "date_max": "2023-12-29 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\interim\\factor_covariance.parquet",
+      "sha256": "4d64ca43e2f625686574c32baeef1df53b9fde0b739ccee1b4ab59b2a2c1c653",
+      "bytes": 133335,
+      "rows": 20412,
+      "columns": [
+        "factor_i",
+        "factor_j",
+        "covariance",
+        "date"
+      ],
+      "date_min": "2020-03-31 00:00:00",
+      "date_max": "2021-03-17 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\interim\\factor_exposures.parquet",
+      "sha256": "d500eb58e65a0ecc8344d8df00da5c7fbafa8bce541a4f6abe6e0013844e73c0",
+      "bytes": 748070,
+      "rows": 15120,
+      "columns": [
+        "asset",
+        "market",
+        "industry:industry_1",
+        "industry:industry_2",
+        "industry:industry_3",
+        "size",
+        "value",
+        "momentum",
+        "volatility",
+        "liquidity",
+        "date"
+      ],
+      "date_min": "2020-03-31 00:00:00",
+      "date_max": "2021-03-17 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\interim\\factor_returns.parquet",
+      "sha256": "5c89d9efb11b86eb2011254699acd74d7172cd8098e59160e63806c4e5bc73eb",
+      "bytes": 35539,
+      "rows": 314,
+      "columns": [
+        "market",
+        "industry:industry_1",
+        "industry:industry_2",
+        "industry:industry_3",
+        "size",
+        "value",
+        "momentum",
+        "volatility",
+        "liquidity",
+        "__index_level_0__"
+      ],
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\interim\\regression_diagnostics.parquet",
+      "sha256": "5ceba6bc698d6146fbf9a7efdc187457cf5fb2fd2d06c64a1117f3536d53fbcc",
+      "bytes": 15936,
+      "rows": 314,
+      "columns": [
+        "rank",
+        "n_assets",
+        "condition_number",
+        "weighted_r_squared",
+        "residual_std",
+        "__index_level_0__"
+      ],
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\interim\\specific_returns.parquet",
+      "sha256": "2ded39ac9c06f613b10aeae74addb5dbace47e69d9191e889be97e319ccddf42",
+      "bytes": 211978,
+      "rows": 314,
+      "columns": [
+        "asset_0000",
+        "asset_0001",
+        "asset_0002",
+        "asset_0003",
+        "asset_0004",
+        "asset_0005",
+        "asset_0006",
+        "asset_0007",
+        "asset_0008",
+        "asset_0009",
+        "asset_0010",
+        "asset_0011",
+        "asset_0012",
+        "asset_0013",
+        "asset_0014",
+        "asset_0015",
+        "asset_0016",
+        "asset_0017",
+        "asset_0018",
+        "asset_0019",
+        "asset_0020",
+        "asset_0021",
+        "asset_0022",
+        "asset_0023",
+        "asset_0024",
+        "asset_0025",
+        "asset_0026",
+        "asset_0027",
+        "asset_0028",
+        "asset_0029",
+        "asset_0030",
+        "asset_0031",
+        "asset_0032",
+        "asset_0033",
+        "asset_0034",
+        "asset_0035",
+        "asset_0036",
+        "asset_0037",
+        "asset_0038",
+        "asset_0039",
+        "asset_0040",
+        "asset_0041",
+        "asset_0042",
+        "asset_0043",
+        "asset_0044",
+        "asset_0045",
+        "asset_0046",
+        "asset_0047",
+        "asset_0048",
+        "asset_0049",
+        "asset_0050",
+        "asset_0051",
+        "asset_0052",
+        "asset_0053",
+        "asset_0054",
+        "asset_0055",
+        "asset_0056",
+        "asset_0057",
+        "asset_0058",
+        "asset_0059",
+        "__index_level_0__"
+      ],
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\interim\\specific_variance.parquet",
+      "sha256": "2d02da37308d8b2a0d7ca4a6df25ad04ba4cb5071c602e9de43392217a91f885",
+      "bytes": 153177,
+      "rows": 15120,
+      "columns": [
+        "asset",
+        "specific_variance",
+        "date"
+      ],
+      "date_min": "2020-03-31 00:00:00",
+      "date_max": "2021-03-17 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\processed\\ashare_panel.parquet",
+      "sha256": "16450e75f336ab18cfdcf0eaa1efc10f18903e716222a973f0b6d4e81276e701",
+      "bytes": 1330619,
+      "rows": 21420,
+      "columns": [
+        "date",
+        "asset",
+        "industry",
+        "tradable",
+        "native_quote",
+        "return",
+        "market_cap",
+        "size",
+        "momentum",
+        "volatility",
+        "liquidity",
+        "alpha",
+        "feature_asof",
+        "shares_effective_date",
+        "adjustments_effective_date"
+      ],
+      "date_min": "2022-07-15 00:00:00",
+      "date_max": "2023-12-29 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\processed\\panel.parquet",
+      "sha256": "98f7171a55af5eff361ba8284cf93e0b9cbcaef402b2f62911e647c7ac74e5be",
+      "bytes": 1505070,
+      "rows": 18900,
+      "columns": [
+        "date",
+        "asset",
+        "return",
+        "alpha",
+        "market_cap",
+        "industry",
+        "size",
+        "value",
+        "momentum",
+        "volatility",
+        "liquidity"
+      ],
+      "date_min": "2020-01-02 00:00:00",
+      "date_max": "2021-03-17 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\ashare\\calendar.parquet",
+      "sha256": "460a4d4b7e2d8cd4be6fbd30fce124378abd638c8c36751bfd992e99b8f7579a",
+      "bytes": 31530,
+      "rows": 484,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "amount"
+      ],
+      "date_min": "2022-01-04 00:00:00",
+      "date_max": "2023-12-29 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\ashare\\coverage.csv",
+      "sha256": "f63b250aa83174bdb56f6cdab7801a32da419cbc32bdc92f5a64bfcc7924518f",
+      "bytes": 1599,
+      "rows": 60,
+      "columns": [
+        "asset",
+        "native_rows",
+        "missing_sessions",
+        "unexpected_sessions",
+        "zero_volume_sessions",
+        "invalid_close_sessions",
+        "missing_dates"
+      ],
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\ashare\\probe_000983_announcements.parquet",
+      "sha256": "c6312691ec920e0bb9a0672155f96e7b9e7184dabac65af74d9af7cc73b7a08e",
+      "bytes": 5374,
+      "rows": 4,
+      "columns": [
+        "代码",
+        "简称",
+        "公告标题",
+        "公告时间",
+        "公告链接"
+      ],
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\ashare\\probe_600066_tencent.parquet",
+      "sha256": "eba074ea5109033a62ae76bebe8f97e2889c7b5fc1ca86e5c45294f375ac36b1",
+      "bytes": 23792,
+      "rows": 483,
+      "columns": [
+        "date",
+        "open",
+        "close",
+        "high",
+        "low",
+        "volume",
+        "turnover",
+        "amount"
+      ],
+      "date_min": "2022-01-04 00:00:00",
+      "date_max": "2023-12-29 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\ashare\\quotes.parquet",
+      "sha256": "8522999ad208591a4b408fa4c6c044a580c03df0a048c3b144fd45b0c100fa4f",
+      "bytes": 795143,
+      "rows": 29030,
+      "columns": [
+        "date",
+        "prevclose",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "amount",
+        "postVol",
+        "postAmt",
+        "asset"
+      ],
+      "date_min": "2022-01-04 00:00:00",
+      "date_max": "2023-12-29 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\ashare\\universe_snapshot.csv",
+      "sha256": "cd9ed499885fcf3fa09d621758a4aa1d1cfd16250b10d6b2739634b7d4c60afd",
+      "bytes": 2148,
+      "rows": 60,
+      "columns": [
+        "asset",
+        "industry",
+        "classification_asof"
+      ],
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\ashare\\valuation_quotes.parquet",
+      "sha256": "7e948b8885497dc2a17615a9b26dbf8a52640087cfa55dd4d478617e2c726ad6",
+      "bytes": 1049568,
+      "rows": 29040,
+      "columns": [
+        "date",
+        "prevclose",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "amount",
+        "postVol",
+        "postAmt",
+        "tradable",
+        "native_quote",
+        "share_source",
+        "shares_effective_date",
+        "outstanding_share",
+        "adjustments_effective_date",
+        "hfq_factor",
+        "adjusted_close",
+        "asset"
+      ],
+      "date_min": "2022-01-04 00:00:00",
+      "date_max": "2023-12-29 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\synthetic_truth.parquet",
+      "sha256": "fd58038bcfc94f6ccf187b30a862e6fbadaddda32cc338244e503c96652398c4",
+      "bytes": 566999,
+      "rows": 18900,
+      "columns": [
+        "date",
+        "asset",
+        "true_factor_return",
+        "true_alpha_return",
+        "true_specific_return"
+      ],
+      "date_min": "2020-01-02 00:00:00",
+      "date_max": "2021-03-17 00:00:00",
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\true_factor_covariance.parquet",
+      "sha256": "4e424150ba02fe913520dd436e09b17362fd2dac18a0c5ef96238cf9fcb5d5be",
+      "bytes": 7649,
+      "rows": 9,
+      "columns": [
+        "market",
+        "industry:industry_1",
+        "industry:industry_2",
+        "industry:industry_3",
+        "size",
+        "value",
+        "momentum",
+        "volatility",
+        "liquidity",
+        "__index_level_0__"
+      ],
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    },
+    {
+      "path": "C:\\Users\\19388\\Desktop\\项目\\risk_aware_portfolio\\data\\raw\\true_factor_returns.parquet",
+      "sha256": "16668789a641d302074979ba3def4480ba6cae96116958aa956cea26205ed70d",
+      "bytes": 35619,
+      "rows": 315,
+      "columns": [
+        "market",
+        "industry:industry_1",
+        "industry:industry_2",
+        "industry:industry_3",
+        "size",
+        "value",
+        "momentum",
+        "volatility",
+        "liquidity",
+        "__index_level_0__"
+      ],
+      "pit_evidence": "unverified_local_cache; not used to fabricate missing fields"
+    }
+  ],
+  "scope": [
+    "2015-01-01",
+    "2025-12-31"
+  ],
+  "status": "EXPLORATORY_ONLY",
+  "formal_ready": false,
+  "credentials_logged": false
+}

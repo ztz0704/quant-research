@@ -1,0 +1,29 @@
+{
+  "verified_utc": "2026-10-04T09:39:13.761155+00:00",
+  "notebooks": [
+    {
+      "notebook": "01_orderbook_diagnostics.ipynb",
+      "status": "passed",
+      "code_cells": 5,
+      "duration_seconds": 1.8
+    },
+    {
+      "notebook": "02_signal_research.ipynb",
+      "status": "passed",
+      "code_cells": 5,
+      "duration_seconds": 2.44
+    },
+    {
+      "notebook": "03_execution_analysis.ipynb",
+      "status": "passed",
+      "code_cells": 6,
+      "duration_seconds": 1.67
+    },
+    {
+      "notebook": "04_final_report.ipynb",
+      "status": "passed",
+      "code_cells": 4,
+      "duration_seconds": 1.61
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source": "baostock",
+  "endpoint": "dividends",
+  "params": {
+    "code": "sh.600000",
+    "year": "2015",
+    "yearType": "operate"
+  },
+  "archive_schema": 1,
+  "direct": true
+}

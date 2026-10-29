@@ -1,0 +1,21 @@
+{
+  "input_rows": 12000,
+  "output_rows": 12000,
+  "feature_columns": [
+    "imbalance_1",
+    "imbalance_k",
+    "spread_bps",
+    "microprice_deviation_bps",
+    "log_depth",
+    "return_1_bps",
+    "realized_vol_bps",
+    "spread_change_bps",
+    "depth_change_pct",
+    "imbalance_change",
+    "order_flow_imbalance",
+    "trade_intensity",
+    "signed_volume_imbalance"
+  ],
+  "feature_nan_rows": 20,
+  "unavailable_label_rows": 20
+}

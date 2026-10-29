@@ -1,0 +1,13 @@
+{
+  "source": "akshare",
+  "endpoint": "tencent",
+  "params": {
+    "symbol": "sz000001",
+    "start_date": "20150105",
+    "end_date": "20150109",
+    "adjust": "",
+    "timeout": 25
+  },
+  "archive_schema": 1,
+  "direct": true
+}

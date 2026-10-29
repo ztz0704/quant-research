@@ -1,0 +1,15 @@
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+data/**/*.parquet
+data/raw/**/*.csv
+data/raw/*.json
+*.partial
+tmp/
+outputs/models/
+outputs/logs/*.log
+outputs/backtests/*.parquet
+.ipynb_checkpoints/

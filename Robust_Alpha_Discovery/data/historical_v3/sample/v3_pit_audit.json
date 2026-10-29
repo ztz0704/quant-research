@@ -1,0 +1,263 @@
+{
+  "schema_version": "ashare-research-v2",
+  "rows": 50,
+  "assets": 10,
+  "dates": 5,
+  "observed_quotes": 0,
+  "generated_grid_rows": 0,
+  "fields": [
+    {
+      "field": "raw_open",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 10
+    },
+    {
+      "field": "raw_high",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 10
+    },
+    {
+      "field": "raw_low",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 10
+    },
+    {
+      "field": "raw_close",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 10
+    },
+    {
+      "field": "volume",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 5
+    },
+    {
+      "field": "amount",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 5
+    },
+    {
+      "field": "adj_factor",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 0
+    },
+    {
+      "field": "list_date",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 0
+    },
+    {
+      "field": "delist_date",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 35
+    },
+    {
+      "field": "industry",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "total_market_cap",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "float_market_cap",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "limit_up",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "limit_down",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "corporate_actions_version",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "universe_member",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 0
+    },
+    {
+      "field": "is_st",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 0
+    },
+    {
+      "field": "suspended",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 0
+    },
+    {
+      "field": "buyable",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 40
+    },
+    {
+      "field": "sellable",
+      "status": "unverified_historical",
+      "source": "baostock",
+      "version": "f04bd759ac4dc22ebf2aa16ef2a288e9acd06d4d99b971b3088314645579fe4c",
+      "missing_rows": 40
+    },
+    {
+      "field": "quote_asof",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "universe_asof",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "status_asof",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "industry_asof",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "capitalization_asof",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "adjustment_asof",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    },
+    {
+      "field": "listing_asof",
+      "status": "missing",
+      "source": null,
+      "version": null,
+      "missing_rows": 50
+    }
+  ],
+  "formal_ready": false,
+  "blockers": [
+    "adjustment_changes_without_cash_share_event_records",
+    "missing_independent_evidence:corporate_action_cash_and_shares",
+    "missing_independent_evidence:historical_membership",
+    "missing_independent_evidence:official_calendar",
+    "missing_independent_evidence:publication_history",
+    "missing_independent_evidence:revision_history",
+    "missing_independent_evidence:security_lifecycle_registry",
+    "missing_member_field:adjustment_asof",
+    "missing_member_field:buyable",
+    "missing_member_field:capitalization_asof",
+    "missing_member_field:corporate_actions_version",
+    "missing_member_field:float_market_cap",
+    "missing_member_field:industry",
+    "missing_member_field:industry_asof",
+    "missing_member_field:limit_down",
+    "missing_member_field:limit_up",
+    "missing_member_field:listing_asof",
+    "missing_member_field:quote_asof",
+    "missing_member_field:sellable",
+    "missing_member_field:status_asof",
+    "missing_member_field:total_market_cap",
+    "missing_member_field:universe_asof",
+    "no_primary_publication_log",
+    "official_calendar",
+    "publication_history_verified",
+    "survivorship_free",
+    "unexplained_member_quote_gap",
+    "unverified_field:adj_factor",
+    "unverified_field:adjustment_asof",
+    "unverified_field:amount",
+    "unverified_field:buyable",
+    "unverified_field:capitalization_asof",
+    "unverified_field:corporate_actions_version",
+    "unverified_field:delist_date",
+    "unverified_field:float_market_cap",
+    "unverified_field:industry",
+    "unverified_field:industry_asof",
+    "unverified_field:is_st",
+    "unverified_field:limit_down",
+    "unverified_field:limit_up",
+    "unverified_field:list_date",
+    "unverified_field:listing_asof",
+    "unverified_field:quote_asof",
+    "unverified_field:raw_close",
+    "unverified_field:raw_high",
+    "unverified_field:raw_low",
+    "unverified_field:raw_open",
+    "unverified_field:sellable",
+    "unverified_field:status_asof",
+    "unverified_field:suspended",
+    "unverified_field:total_market_cap",
+    "unverified_field:universe_asof",
+    "unverified_field:universe_member",
+    "unverified_field:volume"
+  ],
+  "pit_certification": "upstream declarations plus internal checks; not vendor attestation",
+  "audit_version": "pit-audit-v3",
+  "publication_check": [],
+  "trade_state_inconsistencies": 0,
+  "adjustment_change_events": 1,
+  "evidence_grade": "internally_checked_requires_external_corroboration",
+  "automatic_vendor_pit_certification": false
+}

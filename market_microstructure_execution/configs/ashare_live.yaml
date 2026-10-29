@@ -1,0 +1,16 @@
+extends: configs/base.yaml
+data:
+  provider: easyquotation_sina
+  raw_path: data/raw/ashare_live_orderbook.parquet
+  input_path: data/processed/ashare_live_orderbook.parquet
+  features_path: data/processed/ashare_live_features.parquet
+fees:
+  sell_tax_bps: 5.0
+market:
+  fee_date: "2026-10-04"
+collection:
+  symbols: ["000001", "600000", "000333", "600519"]
+  provider: sina
+  iterations: 1
+  interval_seconds: 3.0
+  max_stale_seconds: 30.0
